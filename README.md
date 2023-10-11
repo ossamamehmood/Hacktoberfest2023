@@ -1,6 +1,6 @@
-# Hacktoberfest 2023  `OPEN FIRST` Pull Request 🎉 
-![hacktoberfest2023](https://github.com/ossamamehmood/hacktoberfest/raw/main/.github/logo.png)
+# Hacktoberfest 2023 `OPEN FIRST` Pull Request 🎉
 
+![hacktoberfest2023](https://github.com/ossamamehmood/hacktoberfest/raw/main/.github/logo.png)
 
 ## This Project Is Perfect For Your First Pull Request
 
@@ -113,6 +113,16 @@
     </kbd>
     <br />
     <sub><b>kharshita590</b></sub>
+  </a>
+</td>
+
+  <td>  
+  <a href="https://github.com/Amad-Ahmed">
+    <kbd>
+      <img src="https://avatars3.githubusercontent.com/Amad-Ahmed?size=100" width="100px;" alt=""/>
+    </kbd>
+    <br />
+    <sub><b>Amad-Ahmed</b></sub>
   </a>
 </td>
 
