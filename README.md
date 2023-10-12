@@ -147,6 +147,16 @@ If you have any questions, please check our [FAQs](Faqs.md) for answers.
   </a>
 </td>
 
+<td>  
+  <a href="https://github.com/VishankSingh">
+    <kbd>
+      <img src="https://avatars3.githubusercontent.com/VishankSingh?size=100" width="100px;" alt=""/>
+    </kbd>
+    <br />
+    <sub><b>Vishank Singh</b></sub>
+  </a>
+</td>
+
 </tr>
 </table>
 
