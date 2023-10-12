@@ -25,7 +25,9 @@ We have organized the project into different folders for various programming lan
 - [Python](Python/)
 - [C](C/)
 - [C++](C++/)
+- [Golang](Golang/)
 - [Java](Java/)
+- [JavaScript](JavaScript/)
 - [Web Development](Web-Development/)
 
 If you are new to programming, we recommend starting with the "Web Development" folder.
