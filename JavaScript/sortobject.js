@@ -1,0 +1,51 @@
+arr1=[
+    {
+        id:11,
+        name:"kishan",
+        add:"indore"
+    },
+    {
+        id:12,
+        name:"pra",
+        add:"indore"
+    },
+    {
+        id:13,
+        name:"rac",
+        add:"indore"
+    },
+    {
+        id:14,
+        name:"ri",
+        add:"indore"
+    },
+    {
+        id:15,
+        name:"vs",
+        add:"indore"
+    },
+    {
+        id:16,
+        name:"ta",
+        add:"indore"
+    },
+    {
+        id:17,
+        name:"vi",
+        add:"indore"
+    },
+    {
+        id:18,
+        name:"pr",
+        add:"indore"
+    }
+]
+arr2=[];
+arr1.filter(sorted);
+arr1.sort((obj1,obj2)=>(obj1.name>obj2.name)?1:-1)
+function sorted(obj){
+     arr2.push(obj.name);
+}
+arr3=arr2.sort();
+console.log(arr3);
+console.log(arr1);
