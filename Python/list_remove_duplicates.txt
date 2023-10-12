@@ -1,0 +1,25 @@
+# Python code to remove duplicate elements
+'''what i did is create a function in which you have to pass your list and it will return list without duplicates so how it works is it will put every element from the old list to new list but first it will check if it already exists or not if it exists it will not be put into newlist if it does not exists then it will be put into new list.'''
+
+def rem(list1):
+    new_list=[]
+    for i in list1:
+        if i not in new_list:
+            new_list.append(i)
+    return new_list
+
+list1=[1,2,3,4,5,2,3]
+print(rem(list1))
+
+
+
+'''
+#this is a second way if you convert a list into set it will automatically removes duplicates because set does not allows duplicates and then turn this set back into list so there you got a list without duplicates.
+
+#to use this code comment above code and remove comment from this one.
+# Python code to remove duplicate e
+
+list1=[1,2,3,4,5,2,3]
+list1=list(set(list1))
+print(list1)
+'''
