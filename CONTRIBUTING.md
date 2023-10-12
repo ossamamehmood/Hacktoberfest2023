@@ -2,8 +2,6 @@
 
 Before you start contributing, please read our [Code of Conduct](codeofconduct.md). We expect all contributors to follow these guidelines to ensure a positive and inclusive community.
 
-
-
 - You are allowed to make pull requests that break the rules. We just merge it ;)
 - Do NOT add any build steps e.g npm install (we want to keep this a simple static site)
 - Do NOT remove other content.
@@ -14,9 +12,8 @@ Before you start contributing, please read our [Code of Conduct](codeofconduct.m
 <br>
 
 ## FAQs
+
 If you have any questions, please check our [FAQs](faqs.md) for answers.
-
-
 
 ## Language-Specific Folders
 
@@ -38,9 +35,11 @@ If you are new to programming, we recommend starting with the "Web Development" 
 ```terminal
 git clone https://github.com/fineanmol/Hacktoberfest2022.git
 ```
+
 - Navigate to project directory.
+
 ```terminal
-cd Hacktoberfest2022
+cd Hacktoberfest2023
 ```
 
 - Create a new Branch
@@ -48,20 +47,24 @@ cd Hacktoberfest2022
 ```markdown
 git checkout -b my-new-branch
 ```
+
 - Add your Name to `contributors/contributorsList.js`
+
 ```markdown
 git add .
 ```
+
 - Commit your changes.
 
 ```markdown
 git commit -m "Relevant message"
 ```
-- Then push 
+
+- Then push
+
 ```markdown
 git push origin my-new-branch
 ```
-
 
 - Create a new pull request from your forked repository
 
@@ -69,18 +72,20 @@ git push origin my-new-branch
 
 ## Avoid Conflicts {Syncing your fork}
 
-An easy way to avoid conflicts is to add an 'upstream' for your git repo, as other PR's may be merged while you're working on your branch/fork.   
+An easy way to avoid conflicts is to add an 'upstream' for your git repo, as other PR's may be merged while you're working on your branch/fork.
 
 ```terminal
-git remote add upstream https://github.com/fineanmol/Hacktoberfest2022
+git remote add upstream https://github.com/ossamamehmood/Hacktoberfest2023.git
 ```
 
 You can verify that the new remote has been added by typing
+
 ```terminal
 git remote -v
 ```
 
 To pull any new changes from your parent repo simply run
+
 ```terminal
 git merge upstream/master
 ```
