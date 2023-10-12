@@ -1,0 +1,19 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/icoder",
+    "prod_uri": "mysql://root:@localhost/icoder",
+    "fb_url": "https://www.facebook.com",
+    "tw_url": "https://www.twitter.com",
+    "gh_url": "https://www.github.com",
+    "gmail_user": "kamranulhaq2002@gmail.com",
+    "gmail_pw": "gogogreen",
+    "no_of_posts": 4,
+    "admin_user": "kami",
+    "admin_pw": "flask",
+    "upload_location":"F:\\pythoncode\\flask\\static"
+  }
+
+
+}
