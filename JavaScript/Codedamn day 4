@@ -1,0 +1,43 @@
+import axios from "axios";
+
+/**
+ * @typedef {Object} Joke
+ * @property {string} setup - The setup of the joke.
+ * @property {string} punchline - The punchline of the joke.
+ */
+
+/**
+ * returns a random joke from an api
+ * @returns {Promise<Joke>}
+ */
+export async function getJoke() {
+	try {
+		// Obtain the response from API and await it
+		const response = await axios.get(
+			"https://official-joke-api.appspot.com/random_joke"
+		);
+
+		// Parse the response
+		const data = response.data;
+
+		return {
+			setup: data.setup,
+			punchline: data.punchline,
+		};
+	} catch (error) {
+		throw error; // Handle any errors that may occur during the request
+	}
+}
+
+// Since you can't use 'await' directly in the top-level scope, you can wrap the code in an async function and call it.
+async function main() {
+  try {
+    const joke = await getJoke();
+    console.log(joke);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+// Call the async function to run the code
+main();
