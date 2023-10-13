@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simple BMI calculator</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="app">
+        <h1 class="header">Simple Metric BMI Calculator</h1>
+        <div class="container">
+          <div id="form">
+            <label for="height">Enter Your height:cm </label>
+            <input
+              type="number"
+              id="height"
+              required
+              placeholder="Enter Your height"
+            />
+
+            <label for="weight" class="label">Enter Your Weight:kg </label>
+            <input
+              type="number"
+              id="weight"
+              required
+              placeholder="Enter Your weight"
+            />
+          </div>
+          <button id="button" class="button">Calculate</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
