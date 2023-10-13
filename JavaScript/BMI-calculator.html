@@ -10,13 +10,23 @@
     <title>BMI Calculator</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <style>
-        body{
+        body {
             background: rgb(131, 58, 180);
             background: linear-gradient(90deg, rgba(131, 58, 180, 1) 8%, rgba(253, 29, 29, 1) 85%, rgba(252, 176, 69, 1) 100%);
         }
-        h1, h2, h3, h4, p, span, input, select, label{
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        span,
+        input,
+        select,
+        label {
             font-family: 'Montserrat', sans-serif;
         }
+
         .bmi-calculator {
             border-radius: 5px;
             padding: 20px;
@@ -72,7 +82,7 @@
 
         <div class="callout">
             <div class="field sel unit">
-                <label for="height-unit">Units:</label>
+                <label for="weight-unit">Units:</label>
                 <select name="weight-unit">
                     <option selected="selected" value="lbs">Pounds</option>
                     <option value="kg">Kilograms</option>
@@ -90,9 +100,10 @@
             </div>
         </div>
     </div>
+    <div class="results"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
-        var elInputs = $(".calc");
+            var elInputs = $(".calc");
 
         var elHeightUnits = $("select[name=height-unit]");
         var elFt = $("input[name=feet]");
@@ -169,12 +180,21 @@
                                 ? " "
                                 : "Obese";
 
-            var intIdealWeightLow = Math.round(
-                (18.5 * intHeightInInches * intHeightInInches) / 703
-            );
-            var intIdealWeightHigh = Math.round(
-                (25 * intHeightInInches * intHeightInInches) / 703
-            );
+            var intIdealWeightLow;
+            var intIdealWeightHigh;
+
+            if (elWeightUnits.val() === "lbs") {
+                // If the user's input weight unit is in pounds (lbs)
+                var intIdealWeightLow = Math.round((18.5 * intHeightInInches * intHeightInInches) / 703);
+                var intIdealWeightHigh = Math.round((25 * intHeightInInches * intHeightInInches) / 703);
+            } else if (elWeightUnits.val() === "kg") {
+                // If the user's input weight unit is in kilograms (kg)
+                  var intIdealWeightLow = Math.round(18.5 * (intHeightInInches / 39.37) * (intHeightInInches / 39.37));
+                  var intIdealWeightHigh = Math.round(25 * (intHeightInInches / 39.37) * (intHeightInInches / 39.37));
+            }
+
+            var strWeightUnit = elWeightUnits.val() === "lbs" ? "lbs" : "kg";
+
             if (strWeightClass && intBMI) {
                 $(".results").empty();
                 $(".bmi-calculator").append(
@@ -187,11 +207,12 @@
                     ")</em><br />" +
                     "Your optimal weight is between<br /><em>" +
                     intIdealWeightLow +
+                    " " + strWeightUnit +
                     "</em> and <em>" +
                     intIdealWeightHigh +
-                    "</em> " +
-                    elWeightUnits.val() +
-                    ".</h4>" +
+                    " " + strWeightUnit +
+                    "</em>." +
+                    "</h4>" +
                     "</div>"
                 );
                 $("#userbmi").val(intBMI);
