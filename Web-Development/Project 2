@@ -1,0 +1,135 @@
+# Creating a "Calculator"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    *{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #0c0c21, rgb(60, 65, 76));
+}
+
+.container{
+  border: 1px solid rgb(141, 138, 138);
+  padding: 20px;
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: 0px 3px 15px rgba(155, 152, 150, 0.7);
+}
+
+input{
+  width: 250px;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  background: transparent;
+  box-shadow: 0px 3px 15px rgb(48, 49, 55,);
+  font-size: 30px;
+  text-align: right;
+  cursor: pointer;
+  color: white;
+}
+
+input::placeholder{
+  color: white;
+}
+
+button{
+  border: none;
+  width: 55px;
+  height: 55px;
+  margin: 4px;
+  border-radius: 40%;
+  background: transparent;
+  color: white;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.equal{
+  background-color: rgb(250, 47, 47);
+}
+
+.operator{
+  color: rgb(43, 236, 21);
+}
+  </style>
+</head>
+<body>
+  <!-- <h1 class="first">Let's Calculate !</h1> -->
+  <div class="container items">
+    <div class="row">
+      <input type="text"placeholder="0" id="inputBox">
+    </div>
+    <div class="row">
+      <button class="operator">AC</button>
+      <button class="operator">DEL</button>
+      <button class="operator">%</button>
+      <button class="operator">/</button>
+    </div>
+    <div class="row">
+      <button >9</button>
+      <button >8</button>
+      <button >7</button>
+      <button class="operator">*</button>
+    </div>
+    <div class="row">
+      <button >6</button>
+      <button >5</button>
+      <button >4</button>
+      <button class="operator">-</button>
+    </div>
+    <div class="row">
+      <button >3</button>
+      <button >2</button>
+      <button >1</button>
+      <button class="operator">+</button>
+    </div>
+    <div class="row">
+      <button >0</button>
+      <button >00</button>
+      <button >.</button>
+      <button class="equal">=</button>
+    </div>
+  </div>
+  <script>let input = document.getElementById("inputBox");
+    let buttons = document.querySelectorAll("button");
+    
+    let string = "";
+    let arr = Array.from(buttons);
+    arr.forEach(button =>{
+      button.addEventListener('click' , (e) =>{
+        if(e.target.innerHTML == '='){
+          string = eval(string);
+          input.value = string;
+        }
+        else if(e.target.innerHTML == 'AC'){
+          string = "";
+          input.value = string;
+        }
+        else if(e.target.innerHTML == 'DEL'){
+          string = string.substring(0,string.length-1);
+          input.value = string;
+        }
+        else{
+          string +=e.target.innerHTML;
+          input.value = string;
+        }
+      })
+    })</script>
+</body>
+</html>
