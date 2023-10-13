@@ -1,0 +1,6 @@
+import random
+
+while True:
+    input("Press Enter to roll the dice...")
+    result = random.randint(1, 6)
+    print("You rolled a", result)
