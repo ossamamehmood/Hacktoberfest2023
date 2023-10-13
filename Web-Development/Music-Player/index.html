@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=0.5, minimum-scale=0.5, width=device-width" />
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Tracks used in this music/audio player application are free to use. I downloaded them from Soundcloud and NCS websites. I am not the owner of these tracks. -->
+    <div id="app-cover">
+        <div id="bg-artwork"></div>
+        <div id="bg-layer"></div>
+        <div id="player">
+            <div id="player-track">
+                <div id="album-name"></div>
+                <div id="track-name"></div>
+                <div id="track-time">
+                    <div id="current-time"></div>
+                    <div id="track-length"></div>
+                </div>
+                <div id="s-area">
+                    <div id="ins-time"></div>
+                    <div id="s-hover"></div>
+                    <div id="seek-bar"></div>
+                </div>
+            </div>
+            <div id="player-content">
+                <div id="album-art">
+                <!-- Add your music art here, remember to rename it with _[order] -->
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_1.jpg" class="active" id="_1">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_2.jpg" id="_2">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_3.jpg" id="_3">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_4.jpg" id="_4">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_5.jpg" id="_5">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_6.jpg" id="_6">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_7.jpg" id="_7">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_8.jpg" id="_8">
+                    <img src="https://github.com/b4iterdev/Music-Player/raw/main/Pictures/_9.jpg" id="_9">
+                    <div id="buffer-box">Buffering ...</div>
+                </div>
+                <div id="player-controls">
+                    <div class="control">
+                        <div class="button" id="play-previous">
+                            <i class="fas fa-backward"></i>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="button" id="play-pause-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="button" id="play-next">
+                            <i class="fas fa-forward"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
