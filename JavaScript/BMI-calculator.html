@@ -1,0 +1,206 @@
+<!-- Created by Rishabh Kemni -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BMI Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: rgb(131, 58, 180);
+            background: linear-gradient(90deg, rgba(131, 58, 180, 1) 8%, rgba(253, 29, 29, 1) 85%, rgba(252, 176, 69, 1) 100%);
+        }
+        h1, h2, h3, h4, p, span, input, select, label{
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bmi-calculator {
+            border-radius: 5px;
+            padding: 20px;
+            background: rgb(201, 166, 224);
+            background: linear-gradient(90deg, rgba(201, 166, 224, 1) 8%, rgba(252, 176, 69, 1) 100%);
+            max-width: 250px;
+            margin: auto;
+            box-shadow: 10px 10px 25px -10px #000;
+        }
+
+        .unit {
+            margin-bottom: 0;
+            line-height: initial;
+        }
+
+        .unitInput {
+            left: 50px;
+            margin: 10px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bmi-calculator">
+        <h3>1. Enter your Height:</h3>
+
+        <div class="callout">
+            <div class="field sel unit">
+                <label for="height-unit">Units:</label>
+
+                <select name="height-unit">
+                    <option selected="selected" value="ft">Feet / Inches</option>
+                    <option value="cm">Centimeters</option>
+                </select>
+            </div>
+            <div class="input-group unitInput">
+                <input class="calc form-control" type="text" maxlength="1" size="5" name="feet" />
+                <span class="input-group-addon" style="width:0;"><label class="unit" for="feet">ft</label></span>
+            </div>
+
+            <div class="input-group unitInput">
+                <input class="calc form-control" type="text" maxlength="2" size="5" name="inches" />
+                <span class="input-group-addon" style="width:0;"><label class="unit" for="feet">in</label></span>
+            </div>
+
+            <div class="input-group unitInput" style="display: none;">
+                <input class="calc form-control" type="text" maxlength="3" size="5" name="centimeters" />
+                <span class="input-group-addon" style="width:0;"><label class="unit" for="centimeters">cm</label></span>
+            </div>
+        </div>
+
+        <h3>2. Enter Your Weight:</h3>
+
+        <div class="callout">
+            <div class="field sel unit">
+                <label for="height-unit">Units:</label>
+                <select name="weight-unit">
+                    <option selected="selected" value="lbs">Pounds</option>
+                    <option value="kg">Kilograms</option>
+                </select>
+            </div>
+
+            <div class="input-group unitInput">
+                <input class="calc form-control" type="text" maxlength="3" size="5" name="pounds" />
+                <span class="input-group-addon" style="width:0;"><label class="unit" for="pounds">lbs</label></span>
+            </div>
+
+            <div class="input-group unitInput" style="display: none;">
+                <input class="calc form-control" type="text" maxlength="3" size="5" name="kilograms" />
+                <span class="input-group-addon" style="width:0;"><label class="unit" for="kilograms">kg</label></span>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        var elInputs = $(".calc");
+
+        var elHeightUnits = $("select[name=height-unit]");
+        var elFt = $("input[name=feet]");
+        var elIn = $("input[name=inches]");
+        var elCm = $("input[name=centimeters]");
+
+        var elWeightUnits = $("select[name=weight-unit]");
+        var elLbs = $("input[name=pounds]");
+        var elKg = $("input[name=kilograms]");
+
+        configureHeightField();
+        configureWeightField();
+
+        elHeightUnits.change(function () {
+            configureHeightField();
+        });
+
+        elWeightUnits.change(function () {
+            configureWeightField();
+        });
+
+        function configureHeightField() {
+            var strUnit = elHeightUnits.val();
+
+            if (strUnit == "ft") {
+                elFt.parent().show();
+                elIn.parent().show();
+                elCm.parent().hide();
+            } else {
+                elFt.parent().hide();
+                elIn.parent().hide();
+                elCm.parent().show();
+            }
+        }
+
+        function configureWeightField() {
+            var strUnit = elWeightUnits.val();
+
+            if (strUnit == "lbs") {
+                elLbs.parent().show();
+                elKg.parent().hide();
+            } else {
+                elLbs.parent().hide();
+                elKg.parent().show();
+            }
+        }
+
+        elInputs.keyup(function (e) {
+            e.preventDefault();
+            var intHeightInInches =
+                elHeightUnits.val() == "ft"
+                    ? parseInt(elFt.val()) * 12 +
+                    parseInt(elIn.val() != "" ? elIn.val() : 0)
+                    : elCm.val() / 2.54;
+
+            var intWeightInPounds =
+                elWeightUnits.val() == "lbs" ? elLbs.val() : elKg.val() * 2.2;
+
+            var intBMI =
+                Math.round(
+                    ((intWeightInPounds * 703) /
+                        (intHeightInInches * intHeightInInches)) *
+                    100
+                ) / 100;
+
+            var strWeightClass =
+                intBMI <= 18.5
+                    ? "Underweight"
+                    : intBMI > 18.5 && intBMI <= 25
+                        ? "Normal Weight"
+                        : intBMI > 25 && intBMI <= 30
+                            ? "Overweight"
+                            : isNaN(intBMI)
+                                ? " "
+                                : "Obese";
+
+            var intIdealWeightLow = Math.round(
+                (18.5 * intHeightInInches * intHeightInInches) / 703
+            );
+            var intIdealWeightHigh = Math.round(
+                (25 * intHeightInInches * intHeightInInches) / 703
+            );
+            if (strWeightClass && intBMI) {
+                $(".results").empty();
+                $(".bmi-calculator").append(
+                    '<div class="callout results">' +
+                    "<h3>Your Results</h3>" +
+                    "<h4>Your BMI is <em>" +
+                    intBMI +
+                    " (" +
+                    strWeightClass +
+                    ")</em><br />" +
+                    "Your optimal weight is between<br /><em>" +
+                    intIdealWeightLow +
+                    "</em> and <em>" +
+                    intIdealWeightHigh +
+                    "</em> " +
+                    elWeightUnits.val() +
+                    ".</h4>" +
+                    "</div>"
+                );
+                $("#userbmi").val(intBMI);
+                $("#userbmi").attr("value", intBMI);
+            } else {
+                $(".results").empty();
+            }
+        });
+    </script>
+</body>
+
+</html>
