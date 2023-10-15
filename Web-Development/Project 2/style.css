@@ -1,0 +1,13 @@
+body{
+    background-color:violet;
+    text-align: center;
+}
+.content{
+    margin-top: 100px;
+}
+.checker{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+}
