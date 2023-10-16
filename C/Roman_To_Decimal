@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <string.h>
+
+int romanToDecimal(char *roman) {
+    int i, decimal = 0;
+
+    for (i = 0; i < strlen(roman); i++) {
+        switch (roman[i]) {
+            case 'M':
+                decimal += 1000;
+                break;
+            case 'D':
+                decimal += 500;
+                break;
+            case 'C':
+                if (i < strlen(roman) - 1 && (roman[i + 1] == 'M' || roman[i + 1] == 'D')) {
+                    decimal -= 100;
+                } else {
+                    decimal += 100;
+                }
+                break;
+            case 'L':
+                decimal += 50;
+                break;
+            case 'X':
+                if (i < strlen(roman) - 1 && (roman[i + 1] == 'C' || roman[i + 1] == 'L')) {
+                    decimal -= 10;
+                } else {
+                    decimal += 10;
+                }
+                break;
+            case 'V':
+                decimal += 5;
+                break;
+            case 'I':
+                if (i < strlen(roman) - 1 && (roman[i + 1] == 'X' || roman[i + 1] == 'V')) {
+                    decimal -= 1;
+                } else {
+                    decimal += 1;
+                }
+                break;
+            default:
+                printf("Invalid Roman numeral: %c\n", roman[i]);
+                return -1; // Invalid Roman numeral
+        }
+    }
+
+    return decimal;
+}
+
+int main() {
+    char roman[20];
+    int decimal;
+
+    printf("Enter a Roman numeral: ");
+    scanf("%s", roman);
+
+    decimal = romanToDecimal(roman);
+
+    if (decimal != -1) {
+        printf("Decimal equivalent: %d\n", decimal);
+    }
+
+    return 0;
+}
