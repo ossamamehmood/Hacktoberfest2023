@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+
+html,
+body {
+  --slack-color: #3f0f40;
+  --header-search-color: #421f44;
+  --sidebar-color: #49274b;
+  --sidebar-option-color: #340e36;
+
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

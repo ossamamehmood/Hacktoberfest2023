@@ -1,0 +1,14 @@
+{
+  "name": "Slack Clone",
+  "short_name": "Slack Clone",
+  "icons": [
+    {
+      "src": "/meta/google-touch-icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "https://slack-clone-martstech.vercel.app"
+}
