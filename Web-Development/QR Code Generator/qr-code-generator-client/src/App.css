@@ -1,0 +1,50 @@
+body{
+  background-color: #121212;
+}
+
+/* Add this CSS to your App.css file */
+.input-container {
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.textbar {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid rgb(0, 255, 140); /* Add your preferred border color */
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 300px; /* Adjust the width as needed */
+}
+
+.button {
+  border: 2px solid rgb(0, 255, 140);
+  background-color: rgb(1, 181, 100); /* Add your preferred button 
+  background color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(0, 122, 67); /* Change color on hover as desired */
+}
+
+.qrcode {
+  width: 300px;
+  height: 300px;
+  margin-top: 10%;
+  background-color: rgb(2, 196, 109);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  display: block; /* Make the image a block-level element to center it properly */
+  margin: 0 auto;
+  /* Add any other styles you want for the QR code image */
+}

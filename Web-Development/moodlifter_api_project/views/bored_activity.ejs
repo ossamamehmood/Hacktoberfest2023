@@ -1,0 +1,53 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+  <h1>Let's find something for you to do ✌️</h1>
+
+  <form action="/activitytype" id="form" class="form" method="POST">
+    <select name="type" class="form-select">
+      <option value="" data-display="Select">Random type</option>
+      <option value="education">Education</option>
+      <option value="charity">Charity</option>
+      <option value="recreational">Recreational</option>
+      <option value="relaxation">Relaxation</option>
+      <option value="busywork">Busywork</option>
+      <option value="social">Social</option>
+      <option value="diy">DIY</option>
+      <option value="music">Music</option>
+    </select>
+    <select name="participants" class="form-select">
+      <option value="">Any number of people</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <button type="submit" class="form-submit">Go</button>
+  </form>
+  <section id="cards" class="cards">
+    <article class="card-item">
+      <% if(locals.data){ %>
+      <h2 class="card-activity">
+        <!-- Show Activity -->
+        <%= data.activity %>
+      </h2>
+      <div class="card-info">
+        <span class="card-type">
+          <!-- Show Activity type -->
+          <%= data.type %>
+        </span>
+        <span class="card-participants">
+          <!-- participants: Show participant number -->
+          <%= data.participants %>
+          <span class="card-number"></span>
+        </span>
+      </div>
+    </article>
+<% } else if(locals.error){ %>
+    <div id="tag-error" class="tag-error">
+      <h2>no acitivity with this criteria</h2>
+      <!-- Show any errors that were sent from the backend -->
+    </div>
+  <% } %>
+  </section>
+</div>
+<%- include("partials/footer.ejs") %>

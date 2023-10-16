@@ -1,0 +1,155 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #8BF5FA;
+    color: #333; /* Text color for the entire page */
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header {
+    background-color: #F9F54B; /* Yellow background for the header */
+    color: #333;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .menu button {
+    background: none;
+    border: none;
+    color: #333; /* Text color for the buttons in the header */
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .menu button:hover {
+    text-decoration: underline;
+    color: #F9F54B;
+    background-color: #333;
+  }
+  
+  .form-select, .form-submit {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .card-item {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .card-activity {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .card-type {
+    font-size: 16px;
+    color: #666; /* Slightly darker text color for card type */
+  }
+  
+  .card-participants {
+    font-size: 16px;
+    color: #666; /* Slightly darker text color for participant info */
+  }
+  
+  .tag-error {
+    text-align: center;
+    color: #ff0000;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .intro-welcome img{
+    max-width: 100%; /* Ensure the image doesn't exceed its container width */
+    height: auto; /* Maintain the image's original aspect ratio */
+    display: inline-block;
+  }
+.animal-img {
+  text-align: center; /* Center the images horizontally */
+}
+
+.animal-img img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  height: auto; /* Maintain the image's original aspect ratio */
+  display: inline-block; /* Remove any unwanted spacing and align images as inline-block elements */
+}
+
+  
+  .buttons button {
+    background: #F9F54B; /* Yellow background for the animal image buttons */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .buttons button:hover {
+    background: #F9F54B; /* Slightly darker yellow for button hover effect */
+  }
+  
+  footer {
+    background-color: #F9F54B; /* Yellow background for the footer */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .contact h5 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .details {
+    margin-right: 20px;
+  }
+  .logo img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .logo img:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+  }
+  
+  .contact div {
+    margin: 20px 0;
+  }
+  
+  .contact h3 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  

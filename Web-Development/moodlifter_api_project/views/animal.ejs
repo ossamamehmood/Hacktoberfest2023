@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+<div class="animal-img">
+    <form action="/animaltype" method="post" class="buttons">
+        <button type="submit" value="cats" name="choice">CAT😺</button>
+        <button type="submit" value="shibes" name="choice">DOG🐶</button>
+        <button type="submit" value="birds" name="choice">BIRD🐥</button>
+      </form>
+    <% if(locals.data){ %>
+        <img src="<%= data %>" alt="img">
+   <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
