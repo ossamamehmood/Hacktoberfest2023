@@ -12,7 +12,7 @@ class Stack:
             return self.stack.pop()
 
     def peek(self):
-        if not self.is_empty():
+        if self.is_empty():
             print("Stack is empty.")
         else:
             return self.stack[-1]
