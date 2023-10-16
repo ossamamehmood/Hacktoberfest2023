@@ -1,4 +1,6 @@
-//that simulates a smart traffic light system to optimize traffic flow based on real-time data and reduce congestion at intersections. This system uses a simple algorithm to dynamically adjust signal timings for each traffic light, taking into account traffic volume and congestion.
+// that simulates a smart traffic light system to optimize traffic flow based on real-time data 
+// and reduce congestion at intersections. This system uses a simple algorithm to dynamically 
+// adjust signal timings for each traffic light, taking into account traffic volume and congestion.
 
 import java.util.Random;
 
