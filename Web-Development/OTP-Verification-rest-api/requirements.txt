@@ -3,7 +3,7 @@ certifi==2022.6.15.2
 charset-normalizer==2.1.1
 coreapi==2.3.3
 coreschema==0.0.4
-Django==4.1.1
+Django==4.1.10
 djangorestframework==3.13.1
 drf-yasg==1.21.3
 idna==3.4
