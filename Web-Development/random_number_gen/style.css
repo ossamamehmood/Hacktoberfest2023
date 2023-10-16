@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(5, 5, 5);
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: center;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: center;
+}
+button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    border-style: none;
+}
+.center {
+    text-align: center;
+}
