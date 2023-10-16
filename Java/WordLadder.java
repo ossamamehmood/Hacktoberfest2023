@@ -1,3 +1,10 @@
+/*
+
+    Write a Java function to determine the length of the shortest transformation sequence from startWord to endWord, such that only one letter can be changed at a time and each transformed word must exist in the word list.
+    We will use a breadth-first search (BFS) approach to explore all possible transformations. We will start from the startWord and will change one character at a time to find words in the wordList. When we find the endWord, we will return the length of the transformation sequence. If no transformation sequence is found, the function will return 0.
+
+*/
+
 import java.util.*;
 
 public class WordLadder {
