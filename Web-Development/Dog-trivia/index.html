@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link href='http://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css"/> 
+
+
+<!-- JavaScript -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		
+	<title>Dogs Trivia Questions by John Asabushi</title>
+</head>
+
+<body>
+		<div id="wrapper">
+		<div id="logo">
+			<h1>Dogs Trivia Questions</h1>
+			<img src="images/dog-hearing.jpg" width="300" height="300">
+		</div>
+		<div id="trivia">
+			<div class="question">Question #1: Normal adult dogs have how many teeth?</div>
+			<div id="answer_choices">
+				<input type="radio" name="option" class="option" value="0"><span class="answer">24</span><br>
+				<input type="radio" name="option" class="option" value="1"><span class="answer">38</span><br>
+				<input type="radio" name="option" class="option" value="2"><span class="answer">42</span><br>
+				<input type="radio" name="option" class="option" value="3"><span class="answer">32</span><br>
+			</div>
+
+			<div id="button">
+				<input type="button" id="submit" value="Submit Answer"><span id="hint"></span>
+				<input type="button" id="retry_button" value="Try Again!">
+			</div>
+		</div>
+		<div id="score">
+			<span id="dog_image">
+				<img src="images/dog_empty.jpg"  width="200" height="194">
+			</span>
+	</div>
+</body>
+</html>
