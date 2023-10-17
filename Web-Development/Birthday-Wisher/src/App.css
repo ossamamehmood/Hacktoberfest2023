@@ -4,6 +4,8 @@
 :root {
   --main-bg-color-dark: #212529;
   --main-text-color-dark: #e8e8e8;
+  --highlight-color: #7f78d2;
+  --box-bg-color: #413c69;
 }
 
 * {
@@ -11,12 +13,13 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--main-bg-color-dark);
   color: var(--main-text-color-dark);
-  background-color: #1d1d1d;
 }
+
 .page {
   width: 100%;
   height: 100vh;
@@ -26,12 +29,12 @@ body {
   align-items: center;
   text-align: center;
 }
+
 .heading {
   font-size: 45px;
+  color: var(--highlight-color);
 }
-.highlight {
-  color: #7f78d2;
-}
+
 .countdown-wrapper {
   max-width: 800px;
   display: flex;
@@ -40,8 +43,9 @@ body {
   justify-content: space-around;
   margin: 40px 0;
 }
+
 .countdown-box {
-  background-color: #413c69;
+  background-color: var(--box-bg-color);
   font-size: 50px;
   font-weight: 700;
   color: #dcd6f7;
@@ -54,30 +58,45 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
 }
+
+.countdown-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .legend {
   font-size: 30px;
   color: #a6b1e1;
 }
+
 .wish-message {
   font-size: 45px;
   font-weight: 700;
 }
+
 .birthdate {
   font-size: 25px;
   font-weight: 600;
-  color: #7f78d2;
+  color: var(--highlight-color);
 }
+
 .credits {
   margin-top: 15px;
 }
+
 .github-logo {
   opacity: 0.5;
   width: 50px;
+  transition: opacity 0.3s;
 }
+
 .github-logo:hover {
   opacity: 1;
 }
+
 .form {
   display: flex;
   flex-direction: column;
@@ -86,63 +105,50 @@ body {
   text-align: center;
   margin-top: 20px;
 }
-.form input {
-  margin: 10px;
-}
-input {
-  color: var(--main-text-color-dark);
-  outline: none;
-  width: 300px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px rgba(255, 255, 255, 0.2) solid;
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 18px;
-}
+
+.form input,
 select {
-  width: 300px;
-  height: 40px;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.527);
-  font-family: Montserrat, sans-serif;
-  border: 1px rgba(255, 255, 255, 0.164) solid;
-  padding-left: 20px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   font-size: 18px;
-  margin-top: 10px;
-  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--main-text-color-dark);
+  transition: border 0.5s;
 }
+
 input:focus,
 select:focus,
 .btn:focus {
-  border: 1px rgba(255, 255, 255, 1) solid;
+  border: 1px solid rgba(255, 255, 255, 1);
   transition: all 0.5s;
 }
+
 .btn {
   width: 300px;
   height: 40px;
   margin-top: 20px;
-  outline: none;
-  border: 1px rgba(255, 255, 255, 0.2) solid;
-  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--highlight-color);
   border-radius: 5px;
-  color: rgba(255, 255, 255, 0.719);
+  color: white;
   font-size: 18px;
   font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 .btn:hover {
-  color: white;
+  background-color: #413c69;
 }
+
 a {
-  color: #7f78d2;
+  color: var(--highlight-color);
   font-weight: bold;
   margin-top: 20px;
 }
+
 .gen-link {
   margin-top: 20px;
-  font-size: 400;
+  font-size: 40px;
 }
