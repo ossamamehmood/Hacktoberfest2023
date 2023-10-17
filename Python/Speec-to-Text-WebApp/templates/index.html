@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech Recognition App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech Recognition App</h1>
+        {% if error %}
+            <p class="error">Error: {{ error }}</p>
+        {% endif %}
+        <form action="/recognize" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".wav,.mp3,.ogg" required>
+            <button type="submit">Recognize Speech</button>
+        </form>
+        {% if transcription %}
+            <div class="transcription-box">
+                <h2>Transcription:</h2>
+                <p>{{ transcription }}</p>
+                <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const copyButton = document.querySelector('.copy-button');
+            const transcriptionText = document.querySelector('.transcription-box p');
+            navigator.clipboard.writeText(transcriptionText.textContent);
+            copyButton.textContent = 'Copied';
+            copyButton.disabled = true;
+        }
+    </script>
+    
+    <div class="footer">
+      <a href="https://www.github.com/hakunamatata1997" target="_blank">
+          <img src="{{ url_for('static', filename='github-logo.png') }}" alt="GitHub" class="logo" id="github-logo">
+      </a>
+      <a href="https://www.linkedin.com/in/theakhilb" target="_blank">
+          <img src="{{ url_for('static', filename='linkedin-logo.png') }}" alt="LinkedIn" class="logo" id="linkedin-logo">
+      </a>
+    </div>
+</body>
+</html>
+
