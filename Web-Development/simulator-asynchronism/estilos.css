@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+body{
+    background-color: #181818;
+    /* #232323 */
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 20px;
+    color: tomato;
+}
+
+
+.subtitulo{
+    text-align: center;
+    color: #FCCD2A;
+
+}
+
+.contenedor_boton{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    margin: 0px 620px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 80px;
+    height: 50px;
+    background-color: tomato;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid tomato;
+    font-weight:500;
+}
+
+.contenedor_titulo_center{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedor_titulo{
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCCD2A;
+    border: 2px solid red;
+    border-bottom: none;
+}
+
+.contenedor_general_center{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor_general{
+    width: 60%;
+    height: 100%;
+    background-color: skyblue;
+    /*margin: 0px 250px;*/
+    border: 2px solid red;
+}
+
+.contenedor_producto{
+    width: 100%;
+    height: 80px;
+    display: flex;
+}
+
+.contenedor_parrafo{
+    width: 70%;
+    height: 100%;
+    background-color: tomato;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: 2px solid red;
+    border-bottom: 2px solid red;
+
+}
+
+.parrafo_producto{
+    position: relative;
+    left: 20px;
+}
+
+.contenedor_precio{
+    width: 30%;
+    height: 100%;
+    background-color: #FCCD2A;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid red;
+}
+
+.parrafo_precio{
+    position: relative;
+    left: 20px;
+}
