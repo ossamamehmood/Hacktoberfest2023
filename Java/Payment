@@ -1,0 +1,265 @@
+package Model;
+
+import java.util.Scanner;
+
+import java.util.*;
+
+abstract class Payment {
+
+    private static int currentPaymentID = 1;
+    private int paymentID;
+    private double amount;
+
+    public Payment(double amount) {
+        this.paymentID = currentPaymentID++;
+        this.amount = amount;
+    }
+
+    public int getPaymentID() {
+        return this.paymentID;
+    }
+
+    public double getAmount() {
+        return this.amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public abstract void PaymentMethod();
+
+    public String toString() {
+        return "Payment ID: " + paymentID + " Amount: " + amount;
+    }
+}
+
+class CardPayment extends Payment {
+
+    private String cardNumber;
+    private String cardType;
+
+    public CardPayment(double amount, String cardNumber, String cardType) {
+        super(amount);
+        this.cardNumber = cardNumber;
+        this.cardType = cardType;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public String getCardType() {
+        return cardType;
+    }
+
+   
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
+    @Override
+    public void PaymentMethod() {
+        System.out.println("Payment is accepted using a Card Payment Machine");
+    }
+
+    public String toString() {
+        return super.toString() + " Card Number: " + cardNumber + " Card Type: " + cardType;
+    }
+}
+
+class ChequePayment extends Payment {
+
+    private String chequeNumber;
+    private String date;
+    private String bankName;
+
+    public ChequePayment(double amount, String chequeNumber, String date, String bankName) {
+        super(amount);
+        this.chequeNumber = chequeNumber;
+        this.date = date;
+        this.bankName = bankName;
+    }
+
+    public String getChequeNumber() {
+        return chequeNumber;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setChequeNumber(String chequeNumber) {
+        this.chequeNumber = chequeNumber;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
+    @Override
+    public void PaymentMethod() {
+        System.out.println("Payment is accepted using a Cheque Deposit Box");
+    }
+
+    public String toString() {
+        return super.toString() + " Cheque Number: " + chequeNumber + " Date: " + date + " Bank Name: " + bankName;
+    }
+}
+
+public class PaymentDemo {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Payment> collection = new ArrayList<>();
+        int option = 0;
+
+        do {
+            System.out.println("1 - New Payment");
+            System.out.println("2 - Display All Payments");
+            System.out.println("3 - Search and Print Payment");
+            System.out.println("4 - Search and Delete Payment");
+            System.out.println("5 - Maximum Amount");
+            System.out.println("6 - Exit");
+            option = sc.nextInt();
+
+            switch (option) {
+                case 1:
+                    System.out.println("Choose Payment Type:");
+                    System.out.println("1 - Card Payment");
+                    System.out.println("2 - Cheque Payment");
+                    int paymentType = sc.nextInt();
+
+                    if (collection.size() < 5) {
+                        if (paymentType == 1) {
+                            sc.nextLine();
+                            System.out.println("Enter Card Number");
+                            String cardNumber = sc.nextLine();
+                            System.out.println("Enter Card Type (Credit/Debit)");
+                            String cardType = sc.nextLine();
+                            System.out.println("Enter Card Payment Amount");
+                            double amount = sc.nextDouble();
+                            CardPayment cardPayment = new CardPayment(amount, cardNumber, cardType);
+                            collection.add(cardPayment);
+                            cardPayment.PaymentMethod();
+                        } else if (paymentType == 2) {
+                            sc.nextLine();
+                            System.out.println("Enter Cheque Number");
+                            String chequeNumber = sc.nextLine();
+                            System.out.println("Enter Date");
+                            String date = sc.nextLine();
+                            System.out.println("Enter Bank Name");
+                            String bankName = sc.nextLine();
+                            System.out.println("Enter Cheque Payment Amount");
+                            double amount = sc.nextDouble();
+                            ChequePayment chequePayment = new ChequePayment(amount, chequeNumber, date, bankName);
+                            collection.add(chequePayment);
+                            chequePayment.PaymentMethod();
+                        } else {
+                            System.out.println("Invalid payment type.");
+                            continue; 
+                        }
+                    } else {
+                        System.out.println("Pay Collection is Full");
+                    }
+                    break;
+                case 2:
+                    if (!collection.isEmpty()) {
+                        System.out.println("All Payments:");
+                        for (Payment payment : collection) {
+                            System.out.println(payment);
+
+                        }
+                    } else {
+                        System.out.println("Pay Collection is Empty");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Enter PaymentID to Search:");
+                    int searchPaymentID = sc.nextInt();
+                    boolean paymentFound = false;
+
+                    for (Payment payment : collection) {
+                        if (payment.getPaymentID() == searchPaymentID) {
+                            System.out.println("Payment found:");
+                            System.out.println(payment);
+                            paymentFound = true;
+                            break;
+                        }
+                    }
+
+                    if (!paymentFound) {
+                        System.out.println("Payment with PaymentID " + searchPaymentID + " not found.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Enter PaymentID to Delete:");
+                    int deletePaymentID = sc.nextInt();
+                    boolean paymentDeleted = false;
+
+                    for (Payment payment : collection) {
+                        if (payment.getPaymentID() == deletePaymentID) {
+                            collection.remove(payment);
+                            System.out.println("Payment with PaymentID " + deletePaymentID + " deleted.");
+                            paymentDeleted = true;
+                            break;
+                        }
+                    }
+
+                    if (!paymentDeleted) {
+                        System.out.println("Payment with PaymentID " + deletePaymentID + " not found.");
+                    }
+                    break;
+                case 5:
+                    printPaymentsWithMaxAmount(collection);
+                    break;
+                case 6:
+                    System.out.println("Bye...");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+            }
+        } while (option != 6);
+    }
+
+    
+    private static void printPaymentsWithMaxAmount(ArrayList<Payment> payments) {
+        if (!payments.isEmpty()) {
+            double maxAmount = Double.MIN_VALUE;
+            ArrayList<Payment> maxAmountPayments = new ArrayList<>();
+
+            for (Payment payment : payments) {
+                double amount = payment.getAmount();
+                if (amount > maxAmount) {
+                    maxAmount = amount;
+                    maxAmountPayments.clear();
+                    maxAmountPayments.add(payment);
+                } else if (amount == maxAmount) {
+                    maxAmountPayments.add(payment);
+                }
+            }
+
+            if (!maxAmountPayments.isEmpty()) {
+                System.out.println("Payment(s) with Maximum Amount:");
+                for (Payment payment : maxAmountPayments) {
+                    System.out.println(payment);
+
+                }
+            }
+        } else {
+            System.out.println("Pay Collection is Empty");
+        }
+    }
+}
