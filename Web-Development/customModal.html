@@ -1,0 +1,125 @@
+<html>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-main: #d75b4c;
+  --clr-dark: #333;
+  --clr-neutral: #ddd;
+  --clr-light: #fff;
+}
+
+body {
+  font-family: Quicksand, sans-serif;
+  min-height: 90vh;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: var(--clr-body);
+  background: var(--clr-neutral);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.btn {
+  padding: 1em 3em;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 1.5em;
+  background-color: var(--clr-main);
+  font-family: inherit;
+  color: var(--clr-light);
+  transition: filter .15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+ filter: brightness(1.1); 
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem 2.5rem;
+  width: 30em;
+  border-radius: 0.5rem;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  font-size: 1.2em;
+  line-height: 1;
+  padding: 0 .2em .15em;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: var(--clr-neutral);
+  color: var(--clr-dark);
+  transition: color 0.12s ease-in-out;
+}
+.close-button:hover {
+  color: var(--clr-main);
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+  </style>
+  <body>
+    <h1>Modal Box</h1>
+<p><button class="btn trigger">Click here to trigger the modal!</button></p>
+<p><button class="btn trigger">Click here to trigger the modal!</button></p>
+
+<div class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Hello, I am a modal!</h2>
+    <p>Click in the top-right button to close the modal, os just click outside the modal. You can add even a shortcode!</p>
+  </div>
+</div>
+  </body>
+  <sript>
+    var modal = document.querySelector(".modal");
+var triggers = document.querySelectorAll(".trigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+  if (event.target === modal) {
+    toggleModal();
+  }
+}
+
+for (var i = 0, len = triggers.length; i < len; i++) {
+  triggers[i].addEventListener("click", toggleModal);
+}
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+    
+  </sript>
+</html>
