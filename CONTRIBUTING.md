@@ -4,12 +4,12 @@ Before you start contributing, please read our [Code of Conduct](codeofconduct.m
 
 
 - Create an issue about the code or contributions you want to make.
-- Go through the issues before creating one,to avoid duplicate issues
-- Once assigned,make your contributions and create your first PR
-- kindly provide a simple detail about you code or contribution,so others can learn and improve on it
+- Go through the issues before creating one,to avoid duplicate issues.
+- Once assigned,make your contributions and create your first PR.
+- Kindly provide a simple detail about you code or contribution,so others can learn and improve on it.
 - Do NOT remove other content.
-- Styling/code can be pretty, ugly or stupid, big or small as long as it works
-- Try to keep pull requests small to minimize merge conflicts
+- Styling/code can be pretty, ugly or stupid, big or small as long as it works.
+- Try to keep pull requests small to minimize merge conflicts.
 
 <br>
 
