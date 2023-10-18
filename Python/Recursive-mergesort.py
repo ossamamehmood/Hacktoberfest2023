@@ -1,42 +1,40 @@
 def merge_sort(arr):
-    # Base case: If our array is small enough to work with, it's already sorted.
-    if len(arr) <= 1:
-        return arr
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
 
-    # Let's divide our array into two parts.
-    mid = len(arr) // 2
-    left_half = arr[:mid]
-    right_half = arr[mid:]
+        merge_sort(left_half)
+        merge_sort(right_half)
 
-    # Now, we'll sort both halves separately by calling merge_sort on them.
-    left_half = merge_sort(left_half)
-    right_half = merge_sort(right_half)
+        i = j = k = 0
 
-    # Finally, we'll merge the two sorted halves back together and return the result.
-    return merge(left_half, right_half)
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
 
-def merge(left, right):
-    result = []
-    left_idx, right_idx = 0, 0
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
 
-    # Here, we compare elements from both halves and put them in order.
-    while left_idx < len(left) and right_idx < len(right):
-        if left[left_idx] < right[right_idx]:
-            result.append(left[left_idx])
-            left_idx += 1
-        else:
-            result.append(right[right_idx])
-            right_idx += 1
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
 
-    # After we've compared and added as many elements as we can, we might have some leftovers.
-    # Let's make sure to add any remaining elements from both halves (if there are any).
-    result.extend(left[left_idx:])
-    result.extend(right[right_idx:])
-
-    # Our merged and sorted result is ready to go.
-    return result
+def merge_sort_alternative(arr):
+    # Make a copy of the input array to avoid modifying the original
+    sorted_arr = arr.copy()
+    merge_sort(sorted_arr)
+    return sorted_arr
 
 # Example usage:
 arr = [12, 11, 13, 5, 6, 7]
-sorted_arr = merge_sort(arr)
+sorted_arr = merge_sort_alternative(arr)
 print("Here's the sorted array:", sorted_arr)
