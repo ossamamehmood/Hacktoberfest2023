@@ -1,6 +1,6 @@
-# Hacktoberfest 2023  `OPEN YOUR` Pull Request 🎉 
-![hacktoberfest2023](https://github.com/ossamamehmood/hacktoberfest/raw/main/.github/logo.png)
+# Hacktoberfest 2023 `OPEN YOUR` Pull Request 🎉
 
+![hacktoberfest2023](https://github.com/ossamamehmood/hacktoberfest/raw/main/.github/logo.png)
 
 ## This Project Is Perfect For Your Pull Request
 
@@ -22,7 +22,7 @@ Do read the [Contribution Guidelines](/CONTRIBUTING.md)
 
 ### Code of Conduct
 
-Please read our [Code of Conduct](codeofconduct.md) before participating in this project.
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating in this project.
 
 ### FAQs
 
