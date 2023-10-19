@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs</title>
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #F8ECD1;
+            font-family: 'Cedarville Cursive', cursive;
+            text-align: center;
+        }
+
+        iframe {
+            margin: 20px;
+            padding: 20px;
+            background-color: #DEB6AB;
+            width: 20%;
+        }
+
+        h1 {
+            color: #85586F;
+            /* border-bottom: 2px solid #AC7D88; */
+        }
+
+        .songs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        img {
+            height: 200px;
+            border-top: 3px solid#AC7D88;
+        }
+
+        @media screen and (max-width: 620px) {
+            iframe {
+                width: 70%;
+            }
+
+            .songs {
+                margin-top: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="songs">
+        <iframe id="1" style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/6l0SEG60EHOxny0ZA4lxmO?utm_source=generator" width="40%"
+            height="150" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <iframe id="2" style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5y4XJ9UFS5eOdoYPF5pSAE?utm_source=generator" width="40%"
+            height="150" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <iframe id="3" style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/4APqjZNXpTxHlIq1tLEoYE?utm_source=generator" width="40%"
+            height="150" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+    <h1>This is how a web developer shares songs with her loml</h1>
+    <img src="bear.png" alt="">
+</body>
+
+</html>
