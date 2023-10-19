@@ -37,7 +37,7 @@ If you are new to programming, we recommend starting with the "Web Development" 
 - Clone on your local machine
 
 ```terminal
-git clone https://github.com/ossamamehmood/Hacktoberfest2023.git
+git clone https://github.com/<YOUR-USERNAME>/Hacktoberfest2023.git
 ```
 - Navigate to project directory.
 ```terminal
