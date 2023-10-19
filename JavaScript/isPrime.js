@@ -19,3 +19,22 @@ function isPrime(number) {
   } else {
     console.log(`${num} is not a prime number.`);
   }
+
+  // Asynchronous Programming with Promises:
+// This code uses Promises to fetch data from a remote API and handle the results.
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = { message: "Data fetched successfully" };
+      resolve(data);
+    }, 2000);
+  });
+}
+
+fetchData()
+  .then((data) => {
+    console.log(data.message);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
