@@ -1,0 +1,176 @@
+<html>
+    <title>Game 1</title>
+    <style>
+    body {
+        margin: 0px;
+    }
+    </style>
+    <head></head>
+     <script src="phaser.js"></script> <!-- Add The Phaser Script -->
+
+    <!-- Install Live Server Extension -->
+
+    <body></body>
+
+    <script>
+        // This is an ultra casual game
+        // Setup Environment For The Game 
+        game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'first-game', {preload: preload, create: create, update: update, render: render}); 
+        // game = new Phaser.Game(800, 600, Phaser.CANVAS, 'first-game', {preload: preload, create: create, update: update, render: render}); 
+        var space;
+        var player;
+        var cursor;
+        var score = 0;
+        var score_text;
+        var coins;
+        var coin;
+        var coin_sound;
+        var bullets;
+        var bullet;
+        var shooter;
+
+        function preload() {
+            game.load.image('jet', 'L1/thrust_ship.png'); // Load the jet 
+            game.load.image('coin', 'L1/coin.png');
+            game.load.image('starfield', 'L1/starfield1.png');
+            game.load.audio('metal', 'L1/metal.wav');
+            game.load.audio('coin_touch', 'L1/metal.wav');
+
+        }
+
+        function create() {
+            
+            game.physics.startSystem(Phaser.Physics.ARCADE); // Establish physics engine as Arcade
+            // console.log(game);
+            space = game.add.tileSprite(0, 0, window.innerWidth, window.innerHeight, 'starfield');
+            player = this.add.sprite(400, 200, 'jet');
+            
+            player.anchor.set(0.5); // Shift the anchor of the player object
+            player.angle=90;
+            player.scale.set(2); // Scale the player
+            game.physics.arcade.enable(player); // Enables arcade physics on the player object
+            console.log(player);
+            player.body.drag.set(70);
+            player.body.maxVelocity.set(500);
+
+            score_text = game.add.text(100, 100, "Score: 0", {fill: "#fff", font: "80px Aerial"});
+
+            coin_sound = game.add.audio('coin_touch');
+
+            coins = game.add.group(); // Add coins
+            coins.scale.set(1.25);
+            for(var i=0;i<20;i++) {
+                coin = coins.create(game.rnd.between(0, window.innerWidth), game.rnd.between(0, window.innerHeight), 'coin');
+                // coin.anchor.set(0.5, 0.5);
+                game.physics.arcade.enable(coin);
+
+                coin.body.mass = -500;
+                coin.body.mass = -10;
+            }
+
+            bullets = game.add.weapon(10, 'coin');
+            bullets.setBulletFrames(0, 80, true);
+            bullets.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+            bullets.bulletSpeed = 400;
+            bullets.fireRate = 50;
+            bullets.trackSprite(player, 0, 0, true);
+            
+            cursor = this.input.keyboard.createCursorKeys();
+
+            shooter = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+            
+        }
+
+        function update() {
+            // game.input.x and game.input.y gives the coordinate of mouse pointer by default
+            // player.x = game.input.x; // Try to uncomment this
+            // player.y = game.input.y;
+
+            if (cursor.up.isDown)
+            {
+                console.log("up")
+                game.physics.arcade.accelerationFromRotation(player.rotation, 100, player.body.acceleration);
+            }
+            else
+            {
+                player.body.acceleration.set(0);
+            }
+
+            if (cursor.left.isDown)
+            {
+                console.log("left")
+                player.body.angularVelocity = -300;
+            }
+            else if (cursor.right.isDown)
+            {
+                player.body.angularVelocity = 300;
+            }
+            else
+            {
+                player.body.angularVelocity = 0;
+            }
+
+            if(cursor.down.isDown) {
+                player.body.acceleration.set(0);
+            }
+
+    // if (shooter.isDown)
+    // {
+    //     weapon.fire();
+    // }
+
+            
+            // player.body.velocity.x = 4 * (game.input.x - player.x)
+            // player.body.velocity.y = 4 * (game.input.y - player.y);
+            space.tilePosition.y += 5; // Moving the Background Space in Y Direction with a speed of 5
+
+            // game.input.x -= 10 * cursor.left.isDown ;
+            // game.input.y -= 10 *  cursor.up.isDown ;
+            // game.input.x += 10 * cursor.right.isDown ;
+            // game.input.y += 10 *  cursor.down.isDown ;
+
+            score_text.setText("Score: "+score);
+            // game.world.wrap(player, 16);
+            // degree = Math.atan2((game.input.y - player.y),(game.input.x - player.x)) * 180 / Math.PI +90;
+            // player.angle = degree;
+            // game.world.wrap(player, 16);
+        }
+
+        function render() {
+            game.physics.arcade.collide(player, coins, handler, processor, this);
+
+            game.debug.text("Score: "+score, 100, 100); // Shows the smaller score card for debug
+
+            if(shooter.isDown) {
+                bullets.fire();
+            }
+        }
+
+        function handler(p, c) { 
+            console.log("handler called");
+            return false;
+        }
+
+        function processor(p, c) {
+            console.log("Boom Chiki Chiki Boom");
+            score++;
+            c.x = game.rnd.between(10, 800);
+            c.y = game.rnd.between(10, 600);
+            coin_sound.play();
+            return false; // If returned true then handler function will be called
+        }
+
+        function shoot() {
+            console.log("Shoot");
+            bullet = bullets.create(player.x, player.y, 'coin');
+            bullet.anchor.set(0.5, 0.5);
+            bullet.scale.set(0.2);
+            game.physics.arcade.enable(bullet);
+            // bullet.body.bounce.x = 0.5;
+            // bullet.body.bounce.y = 0.5;
+            bullet.body.velocity.x = 1000 * Math.cos((player.angle-90) * Math.PI/180);
+            bullet.body.velocity.y = 1000 * Math.sin((player.angle-90) * Math.PI/180);
+        }
+
+    </script>
+</html>
