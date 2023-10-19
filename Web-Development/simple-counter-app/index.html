@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Counter App</title>
+    <style>
+        .counter {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Counter App</h1>
+    <p>Click the buttons to increase or decrease the counter:</p>
+    
+    <button id="decrease">Decrease</button>
+    <span class="counter" id="count">0</span>
+    <button id="increase">Increase</button>
+
+    <script>
+        // Get references to the HTML elements
+        const countElement = document.getElementById("count");
+        const increaseButton = document.getElementById("increase");
+        const decreaseButton = document.getElementById("decrease");
+
+        // Initialize the counter
+        let count = 0;
+        countElement.textContent = count;
+
+        // Add click event handlers for the increase and decrease buttons
+        increaseButton.addEventListener("click", () => {
+            count++;
+            countElement.textContent = count;
+        });
+
+        decreaseButton.addEventListener("click", () => {
+            count--;
+            countElement.textContent = count;
+        });
+    </script>
+</body>
+</html>
