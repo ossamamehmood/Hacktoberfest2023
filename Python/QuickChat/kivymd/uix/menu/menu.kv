@@ -1,0 +1,65 @@
+#:import STANDARD_INCREMENT kivymd.material_resources.STANDARD_INCREMENT
+
+
+<RightContent>
+    adaptive_width: True
+
+
+<MDMenuItemIcon>
+
+    IconLeftWidget:
+        id: icon_widget
+        icon: root.icon
+
+
+<MDMenu>
+    size_hint: None, None
+    width: root.width_mult * STANDARD_INCREMENT
+    bar_width: 0
+    key_viewclass: "viewclass"
+    key_size: "height"
+
+    RecycleBoxLayout:
+        padding: 0, "4dp", 0, "4dp"
+        default_size: None, dp(48)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: "vertical"
+
+
+<MenuContainer@MDCard>
+
+
+<MDDropdownMenu>
+
+    MenuContainer:
+        id: card
+        orientation: "vertical"
+        elevation: root._elevation
+        shadow_radius: root.shadow_radius
+        shadow_softness: root.shadow_softness
+        shadow_offset: root.shadow_offset
+        shadow_color: root.shadow_color
+        shadow_color: root.shadow_color
+        shadow_softness_size: root.shadow_softness_size
+        size_hint: None, None
+        size: md_menu.size[0], md_menu.size[1] + content_header.height
+        pos: md_menu.pos
+        opacity: md_menu.opacity
+        radius: root.radius
+        md_bg_color:
+            root.background_color \
+            if root.background_color else root.theme_cls.bg_dark
+
+        MDBoxLayout:
+            id: content_header
+            adaptive_size: True
+
+        MDMenu:
+            id: md_menu
+            drop_cls: root
+            width_mult: root.width_mult
+            size_hint: None, None
+            size: 0, 0
+            opacity: 0

@@ -1,0 +1,9 @@
+<MDCardSwipeLayerBox>:
+    md_bg_color: app.theme_cls.divider_color
+
+
+<MDSeparator>
+    md_bg_color:
+        self.theme_cls.divider_color \
+        if not root.color \
+        else root.color

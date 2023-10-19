@@ -1,0 +1,90 @@
+
+BoxLayout:
+    orientation: 'vertical'
+    MDTopAppBar:
+        title: "QuickChat"
+        right_action_items: [ ['magnify', lambda x: print("magnify")], ['message-reply-text', lambda x: print("message-reply-text")], ['dots-vertical', lambda x: print("dots-vertical") ] ]
+    MDTabs:
+        id: tabs
+        on_tab_switch: app.on_tab_switch(*args)
+        Tab:
+            title: "Calls"
+            ScrollView:
+                MDList:
+                    TwoLineIconListItem:
+                        text: 'Sumit'
+                        secondary_text: "You missed a call from Sumit"
+                        ImageLeftWidget:
+                            source: "sumit.jpeg"
+                    TwoLineIconListItem:
+                        text: 'Hardeep'
+                        secondary_text: "You missed a call from Sumit"
+                        ImageLeftWidget:
+                            source: "hardeep.jpeg"
+                    TwoLineIconListItem:
+                        text: 'Saksham'
+                        secondary_text: "You missed a call from Sumit"
+                        ImageLeftWidget:
+                            source: "saksham.jpeg"
+
+        Tab:
+            title: "Chats"
+            ScrollView:
+                MDList:
+                    TwoLineAvatarIconListItem:
+                        text: 'Sumit'
+                        secondary_text: "Reached Home"
+                        ImageLeftWidget:
+                            source: "sumit.jpeg"
+
+                    TwoLineAvatarIconListItem:
+                        text: 'Hardeep'
+                        secondary_text: "Bhai eshant se ladai ho gai"
+                        ImageLeftWidget:
+                            source: "hardeep.jpeg"
+                    TwoLineAvatarIconListItem:
+                        text: 'Saksham'
+                        secondary_text: "Thanks bro"
+                        font_color: 1,1,1,1
+                        ImageLeftWidget:
+                            source: "saksham.jpeg"
+                    TwoLineAvatarIconListItem:
+                        text: 'Natendar'
+                        secondary_text: "Hello"
+                        ImageLeftWidget:
+                            source: "natendar.jpeg"
+                    TwoLineAvatarIconListItem:
+                        text: 'Owner'
+                        secondary_text: "Rent de do bhai"
+                        ImageLeftWidget:
+                            source: "budha.jpg"
+
+        Tab:
+            title: "Contacts"
+            ScrollView:
+                MDList:
+                    OneLineAvatarIconListItem:
+                        text: 'Saksham'
+                        ImageLeftWidget:
+                            source: "saksham.jpeg"
+                    OneLineAvatarIconListItem:
+                        text: 'Jyoti'
+                        ImageLeftWidget:
+                            source: "jyoti.jpeg"
+
+                    OneLineAvatarIconListItem:
+                        text: 'Hardeep'
+                        ImageLeftWidget:
+                            source: "hardeep.jpeg"
+                    OneLineAvatarIconListItem:
+                        text: 'Owner'
+                        ImageLeftWidget:
+                            source: "budha.jpg"
+                    OneLineAvatarIconListItem:
+                        text: 'Sumit'
+                        ImageLeftWidget:
+                            source: "sumit.jpeg"
+                    OneLineAvatarIconListItem:
+                        text: 'Natendar'
+                        ImageLeftWidget:
+                            source: "natendar.jpeg"
