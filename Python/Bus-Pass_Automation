@@ -1,0 +1,195 @@
+# Importing Labraries
+
+import pandas as pd
+import time
+import os
+import qrcode
+import openpyxl
+
+# Global Variables Declaration
+
+Enr=""
+busn=""
+busv=""
+mastinp=""
+Name=""
+Phone=""
+qot=""
+
+# Function Initialization
+
+def quote(qot): # To Print The Process Executed
+    try:
+        print()
+        print("|"*100)
+        qon=(100-len(qot)-4)/2
+        if qon.is_integer():print("|"*int(qon)+"  "+qot+"  "+"|"*int(qon))
+        else:print("|"*(round(qon)+1)+"  "+qot+"  "+"|"*round(qon))
+        print("|"*100)
+    except:return
+
+def addnew(busn): # To Add A New Person For Bus
+    try:
+        bn="Bus-"+busn
+        pth=bn+".xlsx"
+        bus=pd.read_excel(pth)
+        erp=list(bus["Enrollment number"])
+        stp=list(bus["Student's Phone no."])
+        Length=str(len(erp)+2)
+        xlsx=openpyxl.load_workbook(pth)
+        sheet=xlsx.active
+
+        Name=input("Enter Full Name of Student : ")
+
+        if " " not in Name:
+            print("This is not a valid full name, Please try again !")
+            return
+        else:Name=Name.title()
+
+        Enr=input("Enter Student Enrollment Number : ")
+
+        if Enr.isalnum()==False:
+            print("This is not an enrollment number !")
+        if erp.__contains__(Enr.upper()):
+            print("This enrollment number is already registered !")
+            return
+        else:Enr=Enr.upper()
+            
+        sheet['A'+Length]=Name
+        sheet['B'+Length]=Enr
+        
+        Phone=input("Enter 10 Digits Mobile Number : ")
+        if Phone.isnumeric() and len(Phone)==10:
+            if stp.__contains__(int(Phone)):
+                print("Phone number is already registered !")
+                return
+            else:print("passed")
+        else:
+            print("Invalid phone number, please try again !")
+            return
+
+        sheet['C'+Length]=Phone
+        ID=Enr[::-1][:4]+Name.split(" ")[0][0]+Name.split(" ")[1][0]+Enr[2:5]+Phone[::-1][:5]
+        sheet['D'+Length]=ID
+        xlsx.save(pth)
+        bus=pd.read_excel(pth)
+        quote(Name+"'s DETAILS HAS BEEN SAVED SUCCESSFULLY")
+        time.sleep(2)
+        qr(Enr,busn)
+    except:print("Details entered are invalid !")
+
+def delper(Enr,busn): # To Delete An Existing Person 
+    try:
+        bn="Bus-"+busn
+        pth=bn+".xlsx"
+        bus=pd.read_excel(pth)
+        erp=list(bus["Enrollment number"])
+        Length=str(erp.index(str(Enr))+2)
+        xlsx = openpyxl.load_workbook(pth)
+        sheet = xlsx.active
+        sheet['A'+Length]=""
+        sheet['B'+Length]=""
+        sheet['C'+Length]=""
+        sheet['D'+Length]=""
+        xlsx.save(pth)
+        quote(Enr+" : DETAILS HAS BEEN DELETED")
+    except:print("Enrollment number is invalid !")
+
+def addbus(): # To Add A New Bus In System
+    try:
+        busn=input("Enter Bus Number : ").upper()
+        if len(busn)>4:
+            print("Invalid Bus Number !")
+            print()
+            return
+        busv=input("Please Enter Vehicle Number : ").upper()
+        bn="Bus-"+busn
+        pth=bn+".xlsx"
+        print(pth)
+        df = pd.DataFrame({"Name of Students":[],"Enrollment number":[],"Student's Phone no.":[],"14-Digits Confidential ID":[],"IN":[],"OUT":[]})
+        writer = pd.ExcelWriter(pth, engine='xlsxwriter')
+        df.to_excel(writer, sheet_name=busv, index=False)
+        writer.close()
+        quote(pth+" FILE HAS BEEN CREATED SUCESSFULLY")
+    except:print("Details entered are invalid !")
+
+def rembus(busn): # To Remove An Existing Bus
+    try:
+        bn="Bus-"+busn
+        pth=bn+".xlsx"
+        os.remove(pth)
+        quote(pth+" FILE HAS BEEN REMOVED SUCESSFULLY")
+    except:print("Details entered are invalid !")
+
+def qr(Enr,busn): # To Fetch An Existing Person's QR
+    try:
+        bn="Bus-" + busn
+        pth=bn+".xlsx"
+        bus=pd.read_excel(pth)
+        erp=list(bus["Enrollment number"])
+        cnf=list(bus["14-Digits Confidential ID"])
+        ind=erp.index(Enr)
+        img=qrcode.make(cnf[ind])
+        img.show()
+        quote("PLEASE SAVE YOUR QR CODE !")
+        time.sleep(2)
+    except:print("Enrollment number is invalid !")
+
+def main(): # Main Input Function
+    print()
+    mastinp=input("(A)--> Add_Per, (D)--> Delete_Per, (B)--> Add_Bus, (R)--> Remove_Bus, (Q)--> Fetch_Qr : ")
+    print()
+
+    if mastinp not in ["A","a","B","b","D","d","R","r","Q","q"]:
+        print("YOUR INPUT DID NOT MEET THE CRITERIA, PLEASE TRY AGAIN !")
+        return
+
+    if mastinp!="b" and mastinp!="B": # Bus Number VAR
+        busn=input("Enter Bus Number : ").upper()
+        if len(busn)>4:
+            print("Invalid Bus Details !")
+            return
+        else:
+            try:
+                bn="Bus-" + busn
+                pth=bn+".xlsx"
+                bus=pd.read_excel(pth)
+            except:
+                print("Bus number dosen't exists !")
+                return
+
+    if mastinp=="d" or mastinp=="D" or mastinp=="q" or mastinp=="Q": #Enrollment Number VAR
+        try:
+            Enr=input("Enter Student Enrollment Number : ")
+            bn="Bus-" + busn
+            pth=bn+".xlsx"
+            bus=pd.read_excel(pth)
+            erp=list(bus["Enrollment number"])
+            Enr=Enr.upper()
+            erp.__contains__(Enr)
+        except:
+            print("Enrollment number is Invalid !")
+            return
+
+    if mastinp=="A" or mastinp=="a":
+        addnew(busn)
+
+    elif mastinp=="D" or mastinp=="d":
+        delper(Enr,busn)
+
+    elif mastinp=="B" or mastinp=="b":
+        addbus()
+
+    elif mastinp=="R" or mastinp=="r":
+        rembus(busn)
+    
+    elif mastinp=="Q" or mastinp=="q":
+        qr(Enr,busn)
+
+    else:
+        print("YOUR INPUT DID NOT MEET THE CRITERIA, PLEASE TRY AGAIN !")
+        return
+    
+while True:
+    quote("DIGITAL BUS PASS REGULARIZATION SYSTEM HAS STARTED")
+    main()
