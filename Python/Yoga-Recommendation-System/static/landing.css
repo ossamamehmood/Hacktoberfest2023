@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin-bottom: 2rem;
+}
+a{
+    text-decoration: none;
+}
+header{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+header nav{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background: white;
+    height: 9vh;
+    padding: 0.3rem;
+}
+header nav h1{
+    font-family: sans-serif;
+    color: #808080e6;
+    font-size: 1.7rem;
+    flex: 1;
+    margin: 0;
+}
+header nav h1 span{
+    color: #0095ff;
+}
+header nav ul{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+header nav ul li a{
+    color: black;
+}
+main{
+    height: 91vh;
+    background: #0095ff;
+    color:  white;
+    font-family: sans-serif;
+    margin: 0;
+    position: relative;
+}
+main h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.7rem;
+    width:  15cm;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+
+main svg{
+    width: 20vw;
+    position: absolute;
+    top: 22%;
+    right: 15%;
+}
+main svg #stars{
+    animation: stars 8s linear infinite;
+    
+}
+
+@keyframes stars{
+    0%{
+        transform: scale(2);
+    }
+    25%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(2);
+    }
+    75%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
+main svg #grey-balls path{
+    animation: balls 8s ease infinite;
+}
+
+@keyframes balls{
+    0%{
+        fill: white;
+    }
+    25%{
+        fill: #6c63ff;
+    }
+    50%{
+        fill: white;
+    }
+    75%{
+        fill: #6c63ff;
+    }
+    100%{
+        transform: white;
+    }
+}
+
+.required{
+    color: red;
+}
+section.form-container{
+    margin: 3rem 0;
+}
+section.form-container form{
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 2rem 7vw;
+}
+section h1{
+    text-align: center;
+    font-family:'Poppins', sans-serif;
+    margin: 2rem 0;
+}
+section.form-container form div label{
+    display: block;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    margin: 1rem 0;
+}
+section.form-container form div input,section.form-container form div select{
+    width: 100%;
+    padding: 0.6rem 1rem;
+    
+}
+.report{
+    width: 70%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin: 3rem auto;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    display: none;
+}
+
+.yoga-img{
+    width: 25vw;
+    height: 40vh;
+    display: block;
+    margin: 2rem auto;
+}
