@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vw;
+    font-family: sans-serif;
+    padding: 10em 10em;
+    background: url(./bg.jpg);
+    opacity: 0.5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+.glass{
+    width: 500px;
+    height: 400px;
+    background-color: rgba(255, 252, 255, 0.384);
+    padding: 50px;
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(50px);
+    border-radius: 9px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(92, 89, 104, 0.568);
+    line-height: 1.5;
+    transform: translateY(-5%);
+    transition: transform 0.5s;
+
+}
+.glass-1{
+    width: 500px;
+    height: 400px;
+    background-color: rgba(255red, 255, 255, 0.1);
+    padding: 50px;
+    color: rgb(122, 82, 82);
+    border-radius: 9px;
+    backdrop-filter: blur(50px);
+    border: 2px solid transparent;
+    background-clip:padding-box ;
+    box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+    line-height: 1.5;
+    transform: translateY(-5%);
+    transition: transform 0.5s;
+    font-size: 1.7rem;
+}
+.glass h1{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.glass h2{
+    font-size: 1rem;
+    margin-top: 20px;
+}
+.imput{
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.input input{
+    width: 100%;
+    height: 70px;
+    border: none;
+    padding-left: 30px;
+    margin-top: 0;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 20px;
+
+}
+.glass p{
+    font-size: 1.6rem;
+    margin-top: 30px;
+    
+}
