@@ -45,6 +45,16 @@ If you have any questions, please check our [FAQs](Faqs.md) for answers.
 
 <table>
 <tr>
+  <td>  
+  <a href="https://github.com/ahmedrazabaloch">
+    <kbd>
+      <img src="https://avatars3.githubusercontent.com/ahmedrazabaloch?size=100" width="100px;" alt=""/>
+    </kbd>
+    <br />
+    <sub><b>AhmedRaza Baloch</b></sub>
+  </a>
+</td>
+ 
 <td>
   <a href="https://github.com/ossamamehmood">
     <kbd>
