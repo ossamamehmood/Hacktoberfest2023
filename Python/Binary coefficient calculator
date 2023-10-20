@@ -1,0 +1,12 @@
+def factorial(num):
+    if num == 0:
+        return 1
+    else:
+        return num * factorial(num - 1)
+n = int(input("Enter the value of n: "))
+r = int(input("Enter the value of r: "))
+if (r > n):
+    print("Please enter value of r < n")
+else:
+    bcoeff = factorial(n) / (factorial(r) * factorial(n - r))
+    print(bcoeff)
