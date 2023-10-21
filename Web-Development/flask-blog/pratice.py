@@ -1,0 +1,1 @@
+print(help("kam ran".split()))
