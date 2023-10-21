@@ -32,7 +32,7 @@ git clone <repository-url>
 
 2. Navigate to the project directory:
 
-'web-development/EMAILSENDING'
+'web-development/EmailSending'
 
 
 3. Install the required npm packages:
