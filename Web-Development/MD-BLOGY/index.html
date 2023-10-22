@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./showdown.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rest.js/15.2.4/octokit-rest.min.js"></script>
+  <title>Markdown Blogging Platform</title>
+</head>
+<body>
+  <div class="container">
+    
+    
+    <h1 class="center">MD-BLOGY</h1>
+    <section class="choose">
+      <div>
+        
+        <input type="radio" id="radio-one" name="switch-one" value="markdown" checked /><label> <h4>MD</h4></label>
+      </div>
+      <div>
+       
+        <input type="radio" id="radio-two" name="switch-one" value="preview" checked /> <label >
+          <h4>PREVIEW</h4>
+        </label>
+      </div>
+
+      <div>
+       
+      
+  
+    </section>
+
+    <textarea id="markdown-input" placeholder="Write your blog post in Markdown..." class="md-data"></textarea>
+    
+    <div class="preview-container">
+      <h2 class="center center-preview">Preview</h2>
+      <div id="preview"></div>
+    </div>
+    <section class="buttons">
+      </section>
+
+    <input type="text" class="name-of-file" placeholder="blog1.html">
+    <button class="save-btn">SAVE</button>
+    <button class="clear-btn">CLEAR</button>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
