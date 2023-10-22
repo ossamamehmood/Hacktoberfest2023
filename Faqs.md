@@ -1,5 +1,4 @@
-
-#Frequently asked Questions
+# Frequently asked Questions
 
 - Who all can contribute?
   - Anyone with a github account and who is signed up for
