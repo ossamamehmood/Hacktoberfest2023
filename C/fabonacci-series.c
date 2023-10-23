@@ -8,17 +8,16 @@ int main()
   scanf("%d", &n);
  
   printf("First %d terms of Fibonacci series are:\n", n);
+  printf("%d \n",first);
+  printf("%d \n",second);
  
-  for (c = 0; c < n; c++)
+  for (c = 0; c < n-2; c++)
   {
-    if (c <= 1)
-      next = c;
-    else
-    {
+    
       next = first + second;
       first = second;
       second = next;
-    }
+    
     printf("%d\n", next);
   }
  
