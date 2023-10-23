@@ -1,6 +1,6 @@
 # Contribution Rules📚:
 
-Before you start contributing, please read our [Code of Conduct](codeofconduct.md). We expect all contributors to follow these guidelines to ensure a positive and inclusive community.
+Before you start contributing, please read our [Code of Conduct](CODE_OF_CONDUCT.md). We expect all contributors to follow these guidelines to ensure a positive and inclusive community.
 
 
 - Create an issue about the code or contributions you want to make.
