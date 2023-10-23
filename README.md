@@ -22,7 +22,7 @@ Do read the [Contribution Guidelines](/CONTRIBUTING.md)
 
 ### Code of Conduct
 
-Please read our [Code of Conduct](codeofconduct.md) before participating in this project.
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating in this project.
 
 ### FAQs
 
