@@ -1,0 +1,133 @@
+#body-footer {
+  background-color: rgb(10, 17, 33);
+  padding-bottom: 1.5%;
+}
+#footer {
+  width: 75%;
+  margin: auto;
+}
+#main-footer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+  height: 100px;
+}
+#main-footer input {
+  text-align: left;
+  border-radius: 10px;
+  width: 500px;
+  padding: 8px;
+}
+#main-footer button {
+  width: 100px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(108, 112, 122);
+  font-weight: 600;
+}
+#main-footer p {
+  font-size: 12px;
+}
+#line-1 {
+  border: 1px solid white;
+}
+#main-footer-2 {
+  display: flex;
+  justify-content: space-between;
+}
+#info-1 {
+  display: flex;
+  flex-direction: row;
+}
+#info-1 p {
+  list-style: none;
+  font-size: 13px;
+  color: white;
+}
+
+/* .dropdown-menu {
+  background-color: rgb(10, 17, 33);
+} */
+#India-btn {
+  text-align: left;
+  padding: 10px 150px;
+  color: white;
+  border-radius: 10px;
+  border: 0.5px solid white;
+  background-color: rgb(10, 17, 33);
+}
+#India-btn:hover {
+  color: white;
+}
+#India-drop-list {
+  background-color: rgb(10, 17, 33);
+  width: 100%;
+}
+#India-drop-list li:hover {
+  background-color: rgb(58, 160, 220);
+}
+#main-footer-3 {
+  display: flex;
+  gap: 1.5%;
+  margin-top: 1%;
+}
+.bi-facebook {
+  color: white;
+  background-color: rgb(10, 17, 33);
+}
+.fa-twitter {
+  color: rgb(10, 17, 33);
+  background-color: white;
+  padding: 2px;
+  border-radius: 17px;
+}
+.fa-instagram {
+  color: rgb(10, 17, 33);
+  background-color: white;
+  border-radius: 23px;
+  padding: 5px;
+}
+.bi-youtube {
+  color: rgb(10, 17, 33);
+  background-color: white;
+  padding: 5px;
+  border-radius: 18px;
+}
+.bi-linkedin {
+  background-color: rgb(10, 17, 33);
+  color: white;
+  border-radius: 18px;
+}
+#main-footer-4 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+#main-footer-4 a {
+  text-decoration: none;
+}
+#main-footer-4 p {
+  list-style: none;
+  color: white;
+  font-size: 12px;
+  line-height: 8px;
+}
+#main-footer-5 {
+  text-align: center;
+  margin-top: 4%;
+}
+#main-footer-5 h3 {
+  color: white;
+  font-weight: 700;
+}
+#main-footer-5 p {
+  font-size: 11px;
+  margin-top: 1.5%;
+  color: rgb(175, 168, 168);
+}

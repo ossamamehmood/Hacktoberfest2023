@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login / Sign Up</title>
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+            margin-top: 110px;
+        }
+
+        #logo {
+            width: 14%;
+            margin-top: -40px;
+            margin-left: -220px;
+            margin-bottom: 30px;
+        }
+
+        #login {
+            display: flex;
+            justify-content: space-around;
+            /* align-items: center; */
+            flex-direction: column;
+            width: 45%;
+        }
+
+        h1 {
+
+            font-size: 29.5px;
+        }
+
+        label {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: bolder;
+            margin: 2px;
+        }
+
+        input {
+            padding: 15px 15px;
+            border-radius: 10px;
+            margin: 10px 2px;
+            width: 88%;
+            border: 1px solid rgb(163, 155, 155);
+        }
+
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 5px 2px;
+            width: 97.5%;
+            background-color: rgb(62, 123, 203);
+            border: none;
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2d6995;
+        }
+
+        .other {
+            display: flex;
+            padding: 2px 20px;
+
+            align-items: center;
+            border: 1px solid rgb(109, 116, 102);
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .other:hover {
+            background-color: rgb(116, 111, 111);
+            color: rgb(255, 255, 255);
+        }
+
+        .image {
+            width: 9%;
+            margin-right: 50px;
+        }
+
+        #or {
+            text-align: center;
+            z-index: 1;
+            background-color: rgb(255, 255, 255);
+            color: #a09999;
+            font-size: 15px;
+            font-weight: 500;
+            width: 5%;
+            margin: auto;
+            margin-bottom: 10px;
+
+        }
+
+        p {
+            padding: 0px 10px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        span {
+            color: #56a7e1;
+        }
+
+        hr {
+            position: relative;
+            top: 20px;
+            width: 94%;
+            z-index: -1;
+
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <img id="logo" src="https://lh3.googleusercontent.com/p/AF1QipMA1spBSQdAHAfrhUfcZajJflHbGi_Xq_n936vz=w1080-h608-p-no-v0" alt="">
+
+
+        <div id="login">
+            <h1>Log in or create an account</h1>
+            <label for="email">Your email address</label>
+            <input type="email" id="email">
+            <button id="btn">Next</button>
+            <hr>
+            <p id="or">OR</p>
+
+            <div class="other">
+                <img class="image" src="https://auth.trivago.com/_static/icons/google.svg" alt="">
+                <p>Continue with Google</p>
+            </div>
+
+            <div class="other">
+                <img class="image" src="https://auth.trivago.com/_static/icons/apple.svg" alt="">
+                <p>Continue with Apple</p>
+            </div>
+            <div class="other">
+                <img class="image" src="https://auth.trivago.com/_static/icons/facebook.svg" alt="">
+                <p>Continue with Facebook</p>
+            </div>
+
+            <p>By creating an account, you agree to our <span>Privacy policy</span> and <span>Terms of use</span>.</p>
+        </div>
+
+    </div>
+    <script>
+
+
+
+        document.getElementById("btn").addEventListener("click", function () {
+
+            let email = document.getElementById("email").value;
+
+            localStorage.setItem("email", JSON.stringify(email))
+
+            let dataArray = JSON.parse(localStorage.getItem("data")) || [];
+
+
+
+            if (email == "") {
+                alert("Please Enter Email Address")
+                return;
+            }
+
+            if (dataArray.length != 0) {
+                dataArray.forEach(elm => {
+
+                    if (elm.email == email) {
+
+
+                        window.location.replace("./login2.html")
+                    }
+
+                    else {
+                        window.location.replace("./signUp.html")
+                    }
+                });
+            } else {
+                window.location.replace("./signUp.html")
+            }
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

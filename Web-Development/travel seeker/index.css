@@ -1,0 +1,177 @@
+/* Recent Activity bar Start */
+
+#selection-bar {
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+}
+#selection-bar h5 {
+  font-size: 19px;
+  color: black;
+  font-weight: 700;
+}
+.hr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.hr h6 {
+  margin-left: 7px;
+  margin-top: 9px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.vl {
+  border-left: 0.5px solid rgb(118, 107, 107);
+  height: 100px;
+  margin-right: 10px;
+  border-color: rgb(125, 117, 117);
+}
+#mumbai {
+  width: 50%;
+  background-color: rgb(249, 250, 250);
+}
+#mumbai-1 {
+  display: flex;
+  justify-content: space-between;
+}
+#btn1 {
+  margin-top: 3%;
+  margin-right: 8%;
+}
+#btn1 button {
+  border: none;
+  background-color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 15px;
+  border: 0.5px solid rgb(77, 74, 74);
+  border-radius: 7px;
+}
+#recent-act {
+  display: flex;
+}
+#img-1 img {
+  width: 100%;
+  border-radius: 10px;
+}
+#img-1 {
+  margin-top: -10px;
+  width: 45%;
+}
+#detail-1 {
+  display: flex;
+}
+.p-select {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgb(109, 101, 101);
+}
+/* Recent Activity bar End */
+
+/* Slider Start */
+#main-home {
+  width: 75%;
+  margin: auto;
+  margin-top: 8%;
+}
+#top-btn-div {
+  border-bottom: 0.5px solid rgb(203, 194, 194);
+}
+#top-btn-div button {
+  border: none;
+  padding: 5px 15px;
+  color: rgb(99, 90, 90);
+  font-weight: 600;
+  background-color: white;
+}
+#top-btn-div button:hover {
+  background-color: rgb(243, 245, 247);
+}
+#top-btn-div button:focus {
+  color: rgb(54, 132, 194);
+  border: 0.5px dotted black;
+  border-bottom: 2px solid rgb(54, 132, 194);
+}
+.main-carousel {
+  width: 100%;
+  margin: auto;
+  margin-top: 1%;
+  border-radius: 8px;
+}
+.cell {
+  width: 23.6%;
+  margin: 0 10px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.cell img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.cell h6 {
+  padding-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.cell p {
+  font-size: 14px;
+}
+.Avg-price {
+  font-weight: 700;
+}
+
+/* Slider End */
+
+/* Passege start */
+#passege {
+  width: 75%;
+  margin: auto;
+  margin-top: 7%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+#passege h5 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.span-1 {
+  font-weight: 700;
+}
+/* Passege End */
+
+#main-ul {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+#main-ul-1 {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  margin: auto;
+  border: 1px solid grey;
+  font-family: "GestaRegular", Arial, Helvetica, sans-serif;
+  overflow: auto;
+  border: none;
+}
+#main-ul-2 > ul {
+  margin-left: -32px;
+}
+ul li {
+  list-style-type: none;
+  font-size: 13px;
+  padding: 3px;
+}
+.main-h3 {
+  font-size: 20px;
+  font-weight: 700;
+}

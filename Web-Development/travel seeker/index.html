@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="navbar_1.css">
+    <link rel="stylesheet" href="footer_1.css">
+
+    <link rel="stylesheet" href="navbar_1.css">
+    <link rel="stylesheet" href="footer_1.css">
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Home</title>
+  </head>
+  <body>
+
+    <div id="MainNavbar"></div>
+
+    <div id="MainNavbar"></div>
+
+    <!-- Recent Activity bar -->
+    <div>
+      <div id="selection-bar">
+          <h5>Your recent activity</h5>
+      <div class="hr">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          width="12"
+          height="12"
+        >
+          <path
+            d="m.427 1.927 1.215 1.215a8.002 8.002 0 1 1-1.6 5.685.75.75 0 1 1 1.493-.154 6.5 6.5 0 1 0 1.18-4.458l1.358 1.358A.25.25 0 0 1 3.896 6H.25A.25.25 0 0 1 0 5.75V2.104a.25.25 0 0 1 .427-.177ZM7.75 4a.75.75 0 0 1 .75.75v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5A.75.75 0 0 1 7.75 4Z"
+          ></path>
+        </svg>
+        <h6>12 Apr 2023</h6>
+      </div>
+      <div id="recent-act">
+        <div class="vl"></div>
+        <div id="mumbai">
+          <h6>Mumbai</h6>
+          <div id="mumbai-1">
+            <div id="mumbai-2">
+              <div class="hr">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"
+                  ></path>
+                </svg>
+                <h6>No Dates Selected</h6>
+              </div>
+              <div class="hr">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0-.001 3.999A2 2 0 0 0 5.5 3.5Z"
+                  ></path>
+                </svg>
+                <h6>1 Room, 2 Guest</h6>
+              </div>
+            </div>
+            <div id="btn1">
+              <button>Search again</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+            <p class="p-select"> Recently viewed in Mumbai</p>
+            <div id="detail-1">
+                <div id="img-1">
+                    <img src="./images/Screenshot 2023-04-12 151545.png">
+                </div>
+                <div id="img-1">
+                    <img src="./images/Screenshot 2023-04-12 151745.png">
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- slider -->
+    <div id="main-home">
+      <h3 class="main-h3">These top destinations are just a click away</h3>
+      <div id="top-btn-div">
+        <button>Top Cities</button>
+        <button>Top Destination</button>
+        <!-- <hr id="line-1"/> -->
+      </div>
+        <div class="main-carousel">
+          <div class="cell">
+            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_258,q_auto,w_258/categoryimages/64/98/64981_v33.jpeg" alt="">
+            <h6>Hotels in Mumbai</h6> 
+            <p>10,111 Hotels<span class="Avg-price"> Avg.₹3,905</span></p>
+          </div>
+
+          <div class="cell">
+            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_258,q_auto,w_258/categoryimages/64/98/64989_v41.jpeg" alt="">
+            <h6>Hotels in Jaipur</h6> 
+            <p>8,013 Hotels<span class="Avg-price"> Avg.₹3,513</span></p>
+          </div>
+
+          <div class="cell">
+            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_258,q_auto,w_258/categoryimages/18/36/183611_v73.jpeg" alt="">
+            <h6>Hotels in Rishiksh</h6> 
+            <p>3,074 Hotels<span class="Avg-price"> Avg.₹4,912</span></p>
+          </div>
+
+          <div class="cell">
+            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_258,q_auto,w_258/categoryimages/10/13/101331_v40.jpeg" alt="">
+            <h6>Hotels in Udhagamandalam</h6> 
+            <p>3,354 Hotels<span class="Avg-price"> Avg.₹5,686</span></p>
+          </div>
+
+          <div class="cell">
+            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_258,q_auto,w_258/categoryimages/64/96/64967_v41.jpeg" alt="">
+            <h6>Hotels in Delhi</h6> 
+            <p>19,100 Hotels<span class="Avg-price"> Avg.₹3,133</span></p>
+          </div>
+
+          <div class="cell">
+            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_258,q_auto,w_258/categoryimages/64/97/64975_v41.jpeg" alt="">
+            <h6>Hotels in Bangaluru</h6> 
+            <p>13,446 Hotels<span class="Avg-price"> Avg.₹3,388</span></p>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Passege -->
+    <div id="passege">
+        <div>
+          <h5>Travel Seeker's global hotel search</h5>
+          <p>Travel Seeker’s hotel search allows users to compare hotel prices in just a few clicks from hundreds of booking sites for more than 5.0 million hotels and other types of accommodation in over 190 countries. We help millions of travelers each year compare deals for hotels and accommodations. Get information for weekend trips to cities like Mumbai or Bengaluru and you can find the right hotel on Travel Seeker quickly and easily. Delhi and its surrounding area are great for trips that are a week or longer with the numerous hotels available.</p>
+        </div>
+
+        <div>
+          <h5>Find cheap hotels on Travel Seeker</h5>
+          <p>With Travel Seeker you can easily <span class="span-1"> your ideal hotel and compare prices from different websites</span>. Simply enter where you want to go and your desired travel dates, and let our hotel search engine compare accommodation prices for you. To refine your search results, simply filter by price, distance (e.g. from the beach), star category, facilities and more. From budget hostels to luxury suites, Travel Seeker makes it easy to book online. You can search from a large variety of rooms and locations across India, like Shimla and Jaipur to popular cities and holiday destinations abroad!</p>
+        </div>
+
+        <div>
+          <h5>Hotel reviews help you find your ideal hotel</h5>
+          <p>Over <span class="span-1"> million aggregated hotel ratings </span>and more than 19 million images allow you to find out more about where you're travelling. To get an extended overview of a hotel property, Travel Seeker shows the average rating and extensive reviews from other booking sites, e.g. Hotels.com, Expedia, Agoda, leading hotels, etc. Travel Seeker makes it easy for you to find information about your trip to Dubai, including the ideal hotel for you.</p>
+        </div>
+
+        <div>
+          <h5>How to book</h5>
+          <p>Travel Seeker is a hotel search with an extensive price comparison. The prices shown come from numerous hotels and booking websites. This means that while users decide on Travel Seeker which hotel best suits their needs, the booking process itself is completed through the booking sites (which are linked to our website). By clicking on the “view deal” button, you will be forwarded onto a booking site where you can complete the reservation for the hotel deal found on Travel Seeker.</p>
+
+           <p>Let Travel Seeker help you to find the right price from hundreds of booking sites!</p> 
+        </div>
+    </div>
+
+
+    <!-- scroller bar -->
+    <div id="main-ul">
+      <div>
+        <h3 class="main-h3">More Top Cities</h3>
+        <div id="main-ul-1">
+          <div id="main-ul-2">
+            <ul>
+              <li>Hotels in Nainital</li>
+              <li>Hotels in Mahabaleshwar</li>
+              <li>Hotels in Kodaikanal</li>
+              <li>Hotels in Munnar</li>
+              <li>Hotels in Gurgaon</li>
+              <li>Hotels in Lonavala</li>
+              <li>Hotels in Katra</li>
+              <li>Hotels in Singapore</li>
+              <li>Hotels in Ujjain</li>
+              <li>Hotels in Darjeeling</li>
+              <li>Hotels in Digha</li>
+              <li>Hotels in Tirupati</li>
+              <li>Hotels in Visakhapatnam</li>
+              <li>Hotels in Dehradun</li>
+              <li>Hotels in Dehradun</li>
+              <li>Hotels in Gangtok</li>
+              <li>Hotels in Calangute</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>Hotels in Varanasi</li>
+              <li>Hotels in Chennai</li>
+              <li>Hotels in Kodaikanal</li>
+              <li>Hotels in Amritsar</li>
+              <li>Hotels in Udaipur</li>
+              <li>Hotels in Mysore</li>
+              <li>Hotels in Katra</li>
+              <li>Hotels in Singapore</li>
+              <li>Hotels in Ujjain</li>
+              <li>Hotels in Darjeeling</li>
+              <li>Hotels in Digha</li>
+              <li>Hotels in Tirupati</li>
+              <li>Hotels in Visakhapatnam</li>
+              <li>Hotels in Dehradun</li>
+              <li>Hotels in Dehradun</li>
+              <li>Hotels in Gangtok</li>
+              <li>Hotels in Calangute</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>Hotels in Hyderabad</li>
+              <li>Hotels in Mahabaleshwar</li>
+              <li>Hotels in Kodaikanal</li>
+              <li>Hotels in Munnar</li>
+              <li>Hotels in Gurgaon</li>
+              <li>Hotels in Lonavala</li>
+              <li>Hotels in Katra</li>
+              <li>Hotels in Singapore</li>
+              <li>Hotels in Ujjain</li>
+              <li>Hotels in Darjeeling</li>
+              <li>Hotels in Digha</li>
+              <li>Hotels in Tirupati</li>
+              <li>Hotels in Visakhapatnam</li>
+              <li>Hotels in Dehradun</li>
+              <li>Hotels in Dehradun</li>
+              <li>Hotels in Gangtok</li>
+              <li>Hotels in Calangute</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3 class="main-h3">Travel Seeker International</h3>
+          <div id="main-ul-1">
+            <div id="main-ul-2">
+              <ul>
+                <li>Travel Seeker UAE</li>
+                <li>Travel Seeker Australia</li>
+                <li>Travel Seeker Brasil</li>
+                <li>Travel Seeker Chile</li>
+                <li>Travel Seeker Deutschland</li>
+                <li>Travel Seeker España</li>
+                <li>Travel Seeker Ελλάδα</li>
+                <li>Travel Seeker Magyarország</li>
+                <li>Travel Seeker 日本</li>
+                <li>Travel Seeker Malaysia</li>
+                <li>Travel Seeker New Zealand</li>
+                <li>Travel Seeker Polska</li>
+                <li>Travel Seeker Srbija</li>
+                <li>Travel Seeker ประเทศไทย</li>
+                <li>Travel Seeker United Kingdom</li>
+                <li>Travel Seeker Việt Nam</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Travel Seeker Argentina</li>
+                <li>Travel Seeker België</li>
+                <li>Travel Seeker Canada</li>
+                <li>Travel Seeker Colombia</li>
+                <li>Travel Seeker Danmark</li>
+                <li>Travel Seeker España</li>
+                <li>Travel Seeker Ελλάδα</li>
+                <li>Travel Seeker Magyarország</li>
+                <li>Travel Seeker 日本</li>
+                <li>Travel Seeker Malaysia</li>
+                <li>Travel Seeker New Zealand</li>
+                <li>Travel Seeker Polska</li>
+                <li>Travel Seeker Srbija</li>
+                <li>Travel Seeker ประเทศไทย</li>
+                <li>Travel Seeker United Kingdom</li>
+                <li>Travel Seeker Việt Nam</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Travel Seeker Österreich</li>
+                <li>Travel Seeker България</li>
+                <li>Travel Seeker Schweiz</li>
+                <li>Travel Seeker Česko</li>
+                <li>Travel Seeker Ecuador</li>
+                <li>Travel Seeker España</li>
+                <li>Travel Seeker Ελλάδα</li>
+                <li>Travel Seeker Magyarország</li>
+                <li>Travel Seeker 日本</li>
+                <li>Travel Seeker Malaysia</li>
+                <li>Travel Seeker New Zealand</li>
+                <li>Travel Seeker Polska</li>
+                <li>Travel Seeker Srbija</li>
+                <li>Travel Seeker ประเทศไทย</li>
+                <li>Travel Seeker United Kingdom</li>
+                <li>Travel Seeker Việt Nam</li>
+              </ul>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+    
+  <div id="imported-footer"></div>
+  </body>
+  <script src="./index.js" type="module"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script type="text/javascript">
+    $('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  wrapAround:true,
+  freeScroll: true
+});
+  </script>
+</html>

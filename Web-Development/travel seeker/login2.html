@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            font-family: 'Oswald', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+        #container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+            margin-top: 110px;
+        }
+        #logo{
+            width: 16%;
+            margin-top: -40px;
+            margin-left: -220px;
+            margin-bottom: 30px;
+        }
+       
+        #login{
+            display: flex;
+            justify-content: space-around;
+            /* align-items: center; */
+            flex-direction: column;
+            width: 45%;
+        }
+        h1{
+           
+            font-size: 29.5px;
+        }
+        label{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: bolder;
+            margin: 2px;
+        }
+        input{
+            padding: 15px 15px;
+            border-radius: 10px;
+            margin: 10px 2px;
+            width: 88%;
+           border: 1px solid rgb(163, 155, 155);
+        }
+        
+        button{
+            padding: 15px ;
+            border-radius: 10px;
+            margin: 5px 2px;
+            width: 97.5%;
+            background-color:rgb(62, 123, 203) ;
+            border: none;
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+            font-size: 16px;
+        }
+        button:hover{
+            background-color: #2d6995;
+        }
+        
+        
+        p{  
+            padding: 0px 10px;
+            font-size: 15px;
+           
+           
+        }
+        a{
+            color: #56a7e1;
+           
+        }
+        b{
+            margin-top: 20px;
+            margin-left: -120px;
+        }
+         #id{
+         position: relative;
+         left: 2%;
+         font-family:Arial, Helvetica, sans-serif
+        } 
+    </style>
+</head>
+<body>
+      <div id="container">
+         
+            <img  id="logo" src="https://lh3.googleusercontent.com/p/AF1QipMA1spBSQdAHAfrhUfcZajJflHbGi_Xq_n936vz=w1080-h608-p-no-v0" alt="">
+          
+          <b id="id">hi</b>
+          <div id="login">
+            <h1>Enter your password</h1>
+            <label for="password">Your password</label>
+            <input type="password" id="password" >
+            <button id="btn" >Next</button>
+            <p><a href="#">Forgot your password?</a></p>
+          </div>
+         
+      </div>
+      <script>
+
+          let email=JSON.parse(localStorage.getItem("email"));
+          document.getElementById("id").textContent="<"+"  "+email;
+        document.getElementById("btn").addEventListener("click", function(){
+
+            
+            let dataArray=JSON.parse(localStorage.getItem("data")) ||[];
+            let res=false
+            let password= document.getElementById("password").value;
+
+
+            if(password == ""){
+                alert("Please Enter correct Password")
+                return;
+            }
+            dataArray.map((elm)=>{
+
+                    if(elm.password==password){
+                        
+                        // alert("Login Successful")
+                        // location.href="home.html"
+                       res=true
+                    }
+                }) 
+                if(res ==true) {
+                        alert("Login Successful")
+                        location.href="index.html"
+                }
+                else{
+                   alert( "Please Enter Correct Password" )
+                }
+        })
+      </script>
+</body>
+</html>
