@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passsword Generaator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="body">
+    <div class="container">
+        <h1>Generate a <br> <span class="pass">Random Passsword </span></h1>
+        <div class="display">
+            <input type="text" name="" id="password" placeholder="password">
+            <img src="images/copy.png" alt="" srcset="" onclick="copy()">
+        </div>
+        <div class="btn">
+        <button id="gen">GENERATE PASSWORD</button>
+        <img src="images/generate.png" alt="">
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+          
+            <label for="length">
+                <h4>Password Length</h4>
+        <input type="number" name="" id="length" max="30" min="2" value="10" >
+    </label>
+        </div>
+       <div class="row">
+        <label for="upperCase">
+           <h4> Contains uppercase</h4>
+           <input type="checkbox" name="" id="upperCase">
+        </label>
+       </div>
+       <div class="row">
+        <label for="lowerCase">
+           <h4> Contains lowercase</h4>
+           <input type="checkbox" name="" id="lowerCase">
+        </label>
+       </div>
+       <div class="row">
+        <label for="numBer">
+           <h4> Contains Numbers</h4>
+           <input type="checkbox" name="" id="numBer">
+        </label>
+       </div>
+       <div class="row">
+        <label for="Symbols">
+           <h4> Contains symbols</h4>
+           <input type="checkbox" name="" id="Symbols">
+        </label>
+       </div>
+    </div>
+</div>
+    <script src="index.js"></script>
+</body>
+</html>
