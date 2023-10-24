@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+body {
+  line-height: 1;
+  font-family: "inter", sans-serif;
+  color: #343a40;
+}
+
+.navigation {
+  background-color: #091d39;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 30rem;
+  height: auto;
+  cursor: pointer;
+}
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.login a:link,
+.login a:visited {
+  background-color: #fff;
+  padding: 5px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #091d39;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+  border-radius: 9px;
+}
+.login a:hover,
+.login a:active {
+  background-color: #cb1414;
+  color: #fff;
+}
+.search-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke: #fff;
+}
+
+.cart-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #fff;
+}
+
+button {
+  border: none;
+  background-color: #091d39;
+}
+.container {
+  position: relative;
+  background-color: #091d39;
+}
+.main-img {
+  width: 120rem;
+  margin: 0 auto;
+}
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 15rem;
+  transform: translate(-10%, -50%);
+}
+.gaming-needs {
+  color: #cb1414;
+}
+p {
+  font-size: 4.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #091d39;
+}
+
+.newa-h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newa-h3 h3 {
+  cursor: pointer;
+  margin: 6rem 0 3rem 0;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}
+
+.new-arivals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 120rem;
+  margin: 0 auto;
+  gap: 3.2rem;
+  padding: 3.2rem;
+}
+
+.products-img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.product-details a:link,
+.product-details a:visited {
+  background-color: #091d39;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 4px;
+}
+.product-details a:hover,
+.product-details a:active {
+  background-color: #cb1414;
+}
+strong {
+  font-weight: 700;
+}
+figure h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+figure {
+  box-shadow: 0 20px 30px 0 rgba(9, 29, 57, 0.503);
+  border-radius: 4px;
+}
+.products {
+  padding: 20px;
+}
