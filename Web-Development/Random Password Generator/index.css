@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: rgb(44, 50, 124);
+}
+.body{display: flex;
+flex-direction: row;
+}
+.container{
+    display: flex;
+    justify-content: left;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-top: 18vh;
+    margin-left: 5vw;
+gap: 2vh;
+}
+.container h1{
+    color: rgb(234, 234, 234);
+    font-size: 50px;
+
+}
+.display{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 10vh;
+    width: fit-content;
+background-color: rgb(251, 249, 249);
+border-radius: 8px;
+padding: 10px;
+margin-top: 3vh;
+}
+.display img{
+    width: 20px;
+    color: white;
+   margin-left: 5vw;
+   cursor: pointer;
+}
+.display input{
+    width: fit-content;
+    height: 6vh;
+    border-radius: 10px;
+background-color: rgb(251, 249, 249);
+padding: 10px;
+border: 0;
+outline: 0;
+font-size: 25px;
+}
+.pass{
+    color:#019f55;
+    font-size: 55px;
+    font-weight: bolder;
+    border-bottom: 4px solid #019f55;
+    padding-bottom: 8px;
+}
+.display input::placeholder{
+    border: 0;
+
+}
+.btn{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    width: 22vw;
+    background-color: #019f55;
+padding: 10px;
+margin-top: 3vh;
+   border-radius: 10px;
+   cursor: pointer;
+   outline: 0;
+}
+.btn img{
+    width: 20px;
+    margin-left: 2vw;
+}
+.btn button{
+    font-size: 20px;
+    background-color:#019f55;
+    color: rgb(255, 255, 255);
+    border: 0;
+    cursor: pointer;
+}
+.btn:hover{
+    border: 3px solid black;
+}
+@media(max-width:889px){
+    .display{
+        width: fit-content;
+        padding: 10px;
+    }
+    .display input{
+        width: fit-content;
+        padding: 5px;
+    }
+    .btn{
+        width: fit-content;
+        padding: 10px;
+    }
+    .display img{
+        margin-left: 1vw;
+    }
+}
+.right{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30vh;
+  margin-left: 5vw;
+  gap: 5vh;
+}
+.row label{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+
+}
