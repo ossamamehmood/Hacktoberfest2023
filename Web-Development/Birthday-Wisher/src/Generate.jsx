@@ -6,10 +6,16 @@ const Generate = () => {
   const [day, setDay] = useState(1);
   const [month, setMonth] = useState(1);
   const [link, setLink] = useState('');
+  const [warning, setWarning] = useState('');
   const generateLink = () => {
-    setLink(
-      `https://birthday-wisher.netlify.app/birthday/${name}/${day}/${month}`
-    );
+    if(name === ''){
+      setWarning('This field is required')
+    }
+    else{
+      setLink(
+        `https://birthday-wisher.netlify.app/birthday/${name}/${day}/${month}`
+      );
+    }
   };
   return (
     <div className='page'>
@@ -20,7 +26,9 @@ const Generate = () => {
           placeholder='Enter Name'
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
+        <p class="warning-message">{warning}</p>
         <input
           type='number'
           placeholder='Enter Day'
@@ -30,7 +38,7 @@ const Generate = () => {
           min={1}
         />
         <select value={month} onChange={(e) => setMonth(e.target.value)}>
-          <option value=''>Select Month</option>
+          <option value='' disabled>Select Month</option>
           <option selected value='1'>
             January
           </option>

@@ -116,6 +116,9 @@ select {
   margin-top: 10px;
   outline: none;
 }
+select option {
+  color: rgb(76, 75, 75)
+}
 input:focus,
 select:focus,
 .btn:focus {
@@ -145,4 +148,14 @@ a {
 .gen-link {
   margin-top: 20px;
   font-size: 400;
+}
+
+input:required:invalid + .warning-message {
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+
+.warning-message {
+  display: none;
 }
