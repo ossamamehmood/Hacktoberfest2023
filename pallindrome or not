@@ -1,0 +1,14 @@
+#pallindrome or not
+num=input("enter the number")
+n=len(num);
+num=int(num)
+rev=0
+a=num
+for i in range (1,n+1):
+ rem=num%10
+ num=num//10
+ rev=rev*10+rem
+if a==rev:
+ print(a,"is a pallindrome")
+else:
+  print(a,"is not a pallindrome")
