@@ -1,0 +1,33 @@
+import random
+# Hangman
+#tries: 10
+words=["penguin","whale","iceberg","igloo","alaska","huskies","ocean","frozen","polar","snow"]
+theword=random.choice(words)
+n=len(theword)
+f=0
+def hangman(acword,n):
+    guess=""
+    word=""
+    nn=10
+    while nn>0:
+        word=""
+        inp=input("Enter here: ")
+        nn=nn-1
+        print("Turns left: ",nn)
+        guess=guess+inp
+        for j in theword:
+            if j in guess:
+                word=word+j
+            else:
+                word=word+"_ "
+        print(word)
+        if word==acword:
+            print("won")
+            f=1
+            break
+    
+r=hangman(theword,n)
+if f==1:
+    print("Thank You!")
+else:
+    print("You Lost!")
