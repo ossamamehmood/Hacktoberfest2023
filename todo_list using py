@@ -1,0 +1,79 @@
+Todo list
+
+
+import tkinter as tk
+from tkinter import *
+
+class ToDo:
+    def _init_(self, root):
+        self.root = root
+        self.root.title('To-do List')
+        self.root.geometry('650x450+300+150')
+
+        self.label = Label(self.root, text='To-Do List App',
+                           font='Arial, 25 bold', width=20, bd=5, bg='orange', fg='black')
+        self.label.pack(side='top', fill=BOTH)
+
+        #Label is used to create simple labels or text which have no functionality 
+        self.label2 = Label(self.root, text='Add Task ',
+                            font='Arial, 18 bold', width=10, bd=5, bg='orange', fg='black')
+        self.label2.place(x=40, y=54)
+
+        self.label3 = Label(self.root, text='Tasks',
+                            font='Arial, 18 bold', width=10, bd=5, bg='orange', fg='black')
+        self.label3.place(x=320, y=54)
+
+        #Listbox is used to create a OuterBox to take input from user 
+        self.main_text = Listbox(self.root, height=9, bd=5, width=23,
+                                 font="Arial, 20 italic bold")
+        self.main_text.place(x=280, y=100)
+
+        #Text is used to take input from user
+        self.text = Text(self.root, font='Arial, 10 bold', width=30, height=4, bd=5)
+        self.text.place(x=10, y=120)
+
+        self.load_tasks()
+        #Button is used to create a button having specific functionality like add or delete
+        self.button = Button(self.root, text="Add", font='Arial, 20 bold italic', width=10, bd=5, bg='orange', fg='black', command=self.add)
+        self.button.place(x=30, y=200)
+
+        self.button2 = Button(self.root, text="Delete", font='Arial, 20 bold italic', width=10, bd=5, bg='orange', fg='black', command=self.delete)
+        self.button2.place(x=30, y=280)
+
+    # def is used to define a function to obtain the functionality of the buttons
+    def load_tasks(self):
+        with open('data.txt', 'r') as file:
+            read = file.readlines()
+            for i in read:
+                ready = i.strip()
+                self.main_text.insert(END, ready)
+
+    def add(self):
+        content = self.text.get(1.0, END)
+        self.main_text.insert(END, content)
+        with open('data.txt', 'a') as file:
+            file.write(content)
+        self.text.delete(1.0, END)
+
+    def delete(self):
+        delete_ = self.main_text.curselection()
+        look = self.main_text.get(delete_)
+        with open('data.txt', 'r+') as f:
+            new_f = f.readlines()
+            f.seek(0)
+            for line in new_f:
+                item = str(look)
+                if item not in line:
+                    f.write(line)
+            f.truncate()
+        self.main_text.delete(delete_)
+
+def main():
+    root = tk.Tk()
+    ui = ToDo(root)
+    root.mainloop()
+
+if _name_ == '_main_':
+    main()
+
+ 
