@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta charset = "UTF-8">
+     
+    <title>
+        Menu Page
+    </title>
+
+    <body background = "https://bit.ly/31A7CmL">
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <p align = "center"> 
+
+            <b>
+
+                <font color = "#4d2600" face = "Lato">  
+
+                    <h style = "font-size: 500%">    
+                        Welcome CWIT
+                    </h>
+
+                </font>
+
+            </b>    
+
+        </p>
+
+        <p align = "centre">
+
+            <i>
+
+                <font color = "#994d00" face = "Comic Sans MS">
+
+                    <h1 style = "font-size: 135%"> 
+                        From the different options provided in the space below, 
+                        choose the one you wish to use this application for and proceed.
+                    </h1> 
+
+                </font>
+
+            </i>
+
+        </p>
+
+    </body>
+
+    <div class = "menu">
+
+        <?php 
+
+            error_reporting(0);
+            include "BaseMenu.php";
+
+        ?>
+
+    </div>
+
+</html>
