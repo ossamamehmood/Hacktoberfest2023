@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:0;
+}
+
+
+.form-Login{
+    width: 300px;
+    height: 300px;
+    background: #1b1818;
+    margin: auto;
+    margin-top: 80px;
+    padding: 20px 30px;
+    border-top: 4px solid #b60505;
+    color: white;
+    opacity: 0.95;
+}
+body
+{
+    font-family: Arial;
+    background-color: #506584;
+}
+.form-Login h5{
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+    
+}
+
+.controls{
+  width: 94%;
+  border: 1px solid #b60505;
+  margin-bottom: 15px;
+  padding: 11px 10px;
+  background: #252323;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10PX;
+
+}
+
+.buttons{
+
+    width: 100%;
+    height: 40px;
+    background: #b60505;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    font-size: 12;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link{
+text-decoration: none;
+cursor:pointer;
+}
+
+.form-Login p{
+height: 40px;
+text-align: center;
+}
+
+.form-Login a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    
+}
+
+.form-Login a:hover{
+    text-decoration: underline;
+
+}
