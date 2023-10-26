@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Countdown</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://hips.hearstapps.com/hmg-prod/images/birthday-cake-decorated-with-colorful-sprinkles-and-royalty-free-image-1653509348.jpg');
+            background-size: cover;
+            text-align: left; /* Align the content to the left */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #fff;
+            padding: 20px 0;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 20px; /* Add margin for spacing from the left side */
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block; /* Display the form as an inline block */
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        p#countdown {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function calculateCountdown() {
+            var userName = document.getElementById("name").value;
+            var dob = new Date(document.getElementById("dob").value);
+            var today = new Date();
+            var nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
+
+            if (today > nextBirthday) {
+                nextBirthday.setFullYear(today.getFullYear() + 1);
+            }
+
+            var daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+
+            if (daysUntilBirthday === 0) {
+                document.getElementById("countdown").innerHTML = "Happy birthday, " + userName + "!";
+            } else {
+                document.getElementById("countdown").innerHTML = "Hi " + userName + ", there are " + daysUntilBirthday + " days until your next birthday.";
+            }
+        }
+    </script>
+</head>
+<body>
+  <h1><center>Birthday Countdown</center></h1>
+    <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br>
+        <button type="button" onclick="calculateCountdown()">Calculate Countdown</button>
+    </form>
+    <p id="countdown"></p>
+</body>
+</html>
