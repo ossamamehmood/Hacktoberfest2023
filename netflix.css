@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family:url('https://fonts.google.com/specimen/Anton'); */
+    box-sizing: border-box;
+}
+body{
+    
+    color:#fff;
+    background-color: black;
+}
+.header{
+    width: 100%;
+    height: 80vh;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('images/netflix-poster.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    padding: 20px 8%;
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 80px;
+}
+.logo{
+ width: 100px;
+ cursor: pointer;
+
+}
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color:#fff;
+    padding: 7px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+button:hover{
+    color:white;
+}
+.language-btn{
+   
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 5px 5px;
+}
+
+.language-btn img{
+    width: 15px;
+    margin-left: 10px;
+   
+}
+.header-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 100px;
+}
+.header-content h1{
+    font-size: 35px;
+    line-height: 60px;
+    font-weight: 600;
+  max-width: 650px;
+   
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+.header-content p{
+    font-size: 20px;
+}
+.header-content button:hover{
+    background:linear-gradient(black,rgb(93, 126, 106),rgb(193, 188, 116),black);
+}
+.email-signup{
+  
+   display: flex;
+   overflow: hidden;
+    margin-top: 10px;
+    align-items: center;
+    
+
+
+   
+}
+.email-signup input{
+    flex: 1;
+    border: 10px;
+   outline:0;
+    margin-left: 30px;
+    border-radius: 1px;
+    border: 0.5px solid white;
+  margin-right: 10px;
+  padding: 15px 37px;
+  background: linear-gradient(rgba(7, 6, 6, 0.7),rgba(34, 22, 22, 0.7));
+  
+   
+
+}
+.email-signup button{
+    background:red;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border-radius: 2px;
+    padding: 15px 27px;
+    margin-right: 20px;
+}
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+
+
+}
+.features h2{
+    font-size: 35px;
+    color: #fff;
+    font-weight:400 ;
+    margin-bottom: 20px;
+}
+.features p{
+    font-size: 15px;
+}
+
+.row{
+    display: flex;
+    position: relative;
+    width: 120%;
+     height: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+  
+    
+
+    
+}
+.text-col{
+    flex-basis: 45%;
+    margin-bottom: 20px;
+    color: #d4d0d0;
+
+    
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+    display: block;
+    width: 90%;
+    margin: autos;
+
+}
+
+
+/* ------------------faq---------------
+ */
+ .faq{
+    padding: 30px 12%;
+    text-align: center;
+    font-size: 18px;
+
+ }
+ .faq{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #afacac;
+
+}
+ 
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #c6c0c0;
+
+}
+
+.accordion{
+    margin: 10px auto;
+    width:100%;
+    
+    max-width: 900px;
+
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    padding: 2px;
+}
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-size: 18px;
+    font-weight:500 ;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+
+}
+input[type="radio"]{
+    display: none;
+}
+
+.accordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s , padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+
+.faq .email-signup{
+    max-width: 510px;
+    align-items: center;
+    margin: 20px ;
+    margin-left: 270px;
+    border: 5px;
+   
+}
+
+.faq .small{
+    align-items: center;
+}
+.faq .email-signup input{
+    padding-right: 19%;
+}
+
+
+/* -------------------Footer---------------- */
+.footer{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+
+}
+.footer h2{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #fff;
+}
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    text-decoration: none;
+    
+}
+.footer .col a{
+    display: block;
+    text-decoration: none;
+    color-scheme: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.footer .row{
+  align-items: flex-start ;
+  padding: 10px 0;
+  text-decoration: none;
+}
+.footer .row:hover{
+    color: #db0001;
+}
+.footer .language-btn{
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    
+}
+.fa fa-globe{
+    margin-right: 10px;
+}
+
+.copyright-txt{
+    font-size: 14px;
+   
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px){
+    .logo{
+        padding: -1px;
+        margin-right: 1px;
+    }
+    .header-content{
+        position: unset;
+        transform: none;
+        padding-top: 100px;
+    }
+    .header-content h1{
+        font-size: 30px;
+    }
+    .header-content h3{
+        font-size: 15px;
+        color: #cfcdcd;
+    }
+    .header-content p{
+        font-size: 15px;
+        color: #cfcdcd;
+    }
+    .email-signup input{
+        font-size: 7px;
+    }
+    .email-signup button{
+        font-size: 8px;
+        padding: 5px 8px;
+        height: 40px;
+    }
+    .text-col, .img-col{
+        flex-basis: 100%;
+
+    }
+    .features h2{
+        font-size: 30px;
+        color: #fff;
+    }
+    .features p{
+        font-size: 20px;
+    }
+    .row:nth-child(2),.row:nth-child(4){
+        flex-direction: column-reverse;
+    }
+    .features .row{
+        padding: 10px 0;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+    .accordion .content{
+        font-size: 14px;
+    }
+    .accordion li label{
+        padding: 10px;
+        font-size: 14px;
+    }
+    label::after{
+        font-size: 32px;
+    }
+
+
+}
