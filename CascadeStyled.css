@@ -1,0 +1,95 @@
+@import url('https://fonts.googLeapis.com/css2?family=Inter:wght@300&display=swap'); 
+ @import url('https://fonts.googLeapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap'); 
+ @import url('https://fonts.googLeapis.com/css2?family=Poppins:wght@300&display=swap'); 
+  
+ *{ 
+     margin: 0; 
+     padding: 0; 
+     box-sizing: border-box; 
+     text-decoration: none; 
+     color: azure; 
+     z-index: 1; 
+ } 
+  
+ body { 
+     background: rgb(2, 2, 26); 
+     min-height: 100vh; 
+     font-family: 'Inter', sans-serif; 
+     animation: move 1s linear infinite forwards; 
+ } 
+  
+ html{ 
+     scroll-behavior: smooth; 
+ } 
+  
+ ::-webkit-scrollbar { 
+     width: 0; 
+ } 
+  
+ :root { 
+     --color-pri: rgb(82, 188, 250); 
+     --color-pri: rgb(82, 188, 250, 0.445); 
+     --color-sec: rgb(172, 17, 233); 
+     --color-sec-Ligth: rgba(172, 17, 233, 0.274); 
+  
+     --pc-width: 75%; 
+     --tab-width: 90%; 
+     --phone-width: 100%; 
+ } 
+  
+ body::before { 
+     content: ''; 
+     position: fixed; 
+     height: 200px; 
+     width: 200px; 
+     background: rgb(0, 255, 255); 
+     filter: blur(140px); 
+ } 
+  
+ body::after { 
+     content: ''; 
+     position: fixed; 
+     top: 200px; 
+     right: 250px; 
+     height: 200px; 
+     width: 200px; 
+     background: rgb(183, 0, 255); 
+     filter: blur(140px); 
+ } 
+  
+ .bg-circle1 { 
+     position: fixed; 
+     top: 0px; 
+     right: 0px; 
+     height: 200px; 
+     width: 200px; 
+     background: rgb(0, 255, 255); 
+     filter: blur(140px); 
+ } 
+  
+ .bg-circle2 { 
+     position: fixed; 
+     top: 100px; 
+     right: 250px; 
+     height: 200px; 
+     width: 200px; 
+     background: rgb(183, 0, 255); 
+     filter: blur(150px); 
+ } 
+  
+ .container { 
+     width: var(--pc-width); 
+     color: var(--text-pri); 
+     padding: 10px 40px; 
+     margin: 5px auto; 
+     padding: 10px 40px; 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+ } 
+  
+ @media (max-width: 500px) { 
+     .container { 
+         width: var(--phone-width); 
+     } 
+   }
