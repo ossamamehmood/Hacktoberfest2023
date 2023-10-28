@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+
+#define SIZE 5
+int a[SIZE];
+int front=-1;
+int rear=-1;
+
+bool isempty()
+{
+if(front==-1 && rear==-1)
+{
+return true;
+}
+else
+return false;
+}
+void enqueue(int value)
+{
+if(rear==SIZE)
+{
+cout<<"\nQueue is full";
+}
+else
+if(front=-1)
+{
+front =0;
+rear++;
+a[rear]=value;
+}
+}
+void dequeue()
+{
+if(isempty())
+{
+cout<<"\n Queue is empty";
+}
+else
+{
+if(front=rear)
+{
+front=rear=-1;
+}
+else
+{
+front++;
+}
+}
+}
+void showfront()
+{
+if(isempty())
+{
+cout<<"\n Queue is empty";
+}
+else
+
+cout<<"element at front is"<<a[front]<<"\n";
+}
+void display()
+{
+if(isempty())
+{
+cout<<"\n Queue is empty";
+}
+else
+{
+for(int i=front;i<=rear;i++)
+{
+cout<<a[i]<<endl;
+}
+}
+}
+int main()
+{
+cout<<"Inserting elements in queue\n";
+enqueue(2);
+display();
+enqueue(12);
+display();
+enqueue(22);
+display();
+dequeue();
+showfront();
+display();
+
+return 0;
+}
