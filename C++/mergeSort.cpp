@@ -1,5 +1,5 @@
 #include <iostream>
-
+//using std:: as it is a better practice
 // Merge two subarrays into one sorted array.
 void merge(int arr[], int start, int mid, int end) {
     int leftSize = mid - start + 1;
