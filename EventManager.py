@@ -36,6 +36,7 @@ def remove_task(task_name):
         print(f"'{task_name}' has been removed from tasks.")
     else:
         print(f"'{task_name}' is not found in tasks.")
+        return
 
 # Function to remove an event
 def remove_event(event_name):
@@ -44,6 +45,8 @@ def remove_event(event_name):
         print(f"'{event_name}' has been removed from events.")
     else:
         print(f"'{event_name}' is not found in events.")
+        return
+
 
 # Main function
 def main():
