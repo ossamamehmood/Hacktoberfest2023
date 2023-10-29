@@ -4,7 +4,7 @@
 /build/
 
 # Ignore Node.js dependencies
-/node_modules/
+node_modules
 
 # Ignore build and temporary files
 *.js
