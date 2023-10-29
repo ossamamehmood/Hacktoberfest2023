@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+  </head>
+  <body>
+    <div class="header">
+      <img src="image-removebg-preview (9).png" alt="" srcset="">
+      <nav>
+        <a href="currency_convertor.html">Currency convertor</a>
+        <a href="html/digital/digital-storage.html">Universal Unit Converter</a>
+        <a href="">Loan Calculator</a>
+        <a href="BMI.html">BMI Calculator</a>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+    <div class="iframe-container">
+      <iframe src='https://my.spline.design/cubes-69297beb0121738ffb1b9e140e7c61fd/' frameborder='0' width='100%' height='100%'></iframe>  </div>
+    <div class="head">
+      <h1>Scientific Calculator</h1>
+    </div>
+    <div id="main">
+      <table>
+        <tr>
+          <td>
+            <input
+              type="text"
+              id="input-box"
+              style="padding: 2px"
+              onfocus=" "
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btn">Deg</button>
+            <button class="btn">Rad</button>
+            <button class="btn" onclick="factorialFunction()">x!</button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '('"
+            >
+              (
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += ')'"
+            >
+              )
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '%'"
+            >
+              %
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value = ''"
+            >
+              AC
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btn">Inv</button>
+            <button class="btn" onclick="sinFunction()">sin</button>
+            <button class="btn" onclick="lnFunction()">ln</button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '7'"
+            >
+              7
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '8'"
+            >
+              8
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '9'"
+            >
+              9
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '/'"
+            >
+              ÷
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += Math.PI.toFixed(3);"
+            >
+              π
+            </button>
+            <button class="btn" onclick="cosFunction()">cos</button>
+            <button class="btn" onclick="logFunction()">log</button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '4'"
+            >
+              4
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '5'"
+            >
+              5
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '6'"
+            >
+              6
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '*'"
+            >
+              ×
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box'.value += Math.E())"
+            >
+              e
+            </button>
+            <button class="btn" onclick="tanFunction()">tan</button>
+            <button class="btn" onclick="sqrtFunction()">√</button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '1'"
+            >
+              1
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '2'"
+            >
+              2
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '3'"
+            >
+              3
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '-'"
+            >
+              -
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btn">Ans</button>
+            <button class="btn">EXP</button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '**'"
+            >
+              x<sup>y</sup>
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '0'"
+            >
+              0
+            </button>
+            <button
+              class="btn btn-num"
+              onclick="document.getElementById('input-box').value += '.'"
+            >
+              .
+            </button>
+            <button
+              class="btn btn-blue"
+              onclick="document.getElementById('input-box').value = eval(document.getElementById('input-box').value)"
+            >
+              <b>=</b>
+            </button>
+            <button
+              class="btn"
+              onclick="document.getElementById('input-box').value += '+'"
+            >
+              +
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="calc.js"></script>
+  </body>
+</html>

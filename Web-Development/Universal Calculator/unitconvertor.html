@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<title>Unit Converter - Weight</title>
+
+<head>
+    <link rel="icon" href="image/calculator_icon.png">
+    <link rel="stylesheet" href="unitconvertor.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <meta name="title" content="conversion calculator">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+        <img src="image-removebg-preview (9).png" alt="" style="width: 300px; height: auto;">
+    <nav>
+      <a href="calc.html">Scientific Calculator</a>
+      <a href="currency_convertor.html">Currency convertor</a>
+      <a href="">Loan Calculator</a>
+      <a href="BMI.html">BMI Calculator</a>
+      <a href="index.html">Home</a>
+    </nav>
+</div>
+    </header>
+    <div class="iframe-container">
+        <iframe src='https://my.spline.design/cubes-69297beb0121738ffb1b9e140e7c61fd/' frameborder='0' width='100%' height='100%'></iframe>  </div>
+
+
+    <h2 class="text-center text-white bg-dark text-uppercase header-text"> <a href="#" class="text-light">Conversion
+            Calculator</a> <i class="fa fa-calculator"></i></h2>
+
+
+    <p class="about-para">
+    <h3 class="text-center">Enter value in any input field to determine values in other units</h3>
+    </p>
+    <div class="container jumbotron">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="dropdown-container text-center">
+                    <div class="dropdown">
+                        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Digital
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                            <a class="dropdown-item" href="html/digital/number-conversion.html">Number</a>
+                            <a class="dropdown-item" href="html/digital/digital-storage.html">Digital Storage</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-container text-center">
+                    <div class="dropdown">
+                        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="html/physics/length.html">Length</a>
+                            <a class="dropdown-item" href="html/physics/temperature.html">Temperature</a>
+                            <a class="dropdown-item" href="html/physics/speed.html">Speed</a>
+                            <a class="dropdown-item" href="html/physics/area.html">Area</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-container text-center">
+                    <div class="dropdown">
+                        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Chemistry
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-container text-center">
+                    <div class="dropdown">
+                        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Geometry
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="html/geometry/circle.html">Circle</a>
+                            <a class="dropdown-item" href="html/geometry/square.html">Square</a>
+                            <a class="dropdown-item" href="html/geometry/rectangle.html">Rectangle</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+
+
+                <div class="row">
+                    <div class="col">
+                        <label>Pounds</label><br>
+                        <input id="pounds" class="form-control text-center mb-2  mr-sm-2" type="number"
+                            placeholder="Pounds" onchange="fromPoundsToOther(this.value)"
+                            oninput="fromPoundsToOther(this.value)">
+                    </div>
+                    <div class="col ">
+                        <label>Gram</label><br>
+                        <input id="grams" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Grams" onchange="fromGramToOthers(this.value)"
+                            oninput="fromGramToOthers(this.value)">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <label>kilogram</label><br>
+                        <input id="kilogram" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Kilogram" onchange="fromKilogramToOther(this.value)"
+                            oninput="fromKilogramToOther(this.value)">
+                    </div>
+                    <div class="col">
+                        <label>Ounces</label><br>
+                        <input id="ounce" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Ounce" onchange="fromOuncesToOther(this.value)"
+                            oninput="fromOuncesToOther(this.value)">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col">
+                        <label>Stone</label><br>
+                        <input id="stone" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Stone" onchange="fromStoneToOthers(this.value)"
+                            oninput="fromStoneToOthers(this.value)">
+                    </div>
+                    <div class="col">
+                        <label>Carat</label><br>
+                        <input id="carat" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Carat" onchange="fromCaratToOthers(this.value)"
+                            oninput="fromCaratToOthers(this.value)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Miligrams</label><br>
+                        <input id="miligram" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Miligrams" onchange="fromMiligramToOthers(this.value)"
+                            oninput="fromMiligramToOthers(this.value)">
+                    </div>
+
+                    <div class="col">
+                        <label>Metric ton</label><br>
+                        <input id="metric-ton" class="form-control text-center  mb-2 mr-sm-2" type="number"
+                            placeholder="Metric Ton" onchange="fromMetricTonToOthers(this.value)"
+                            oninput="fromMetricTonToOthers(this.value)">
+                    </div>
+
+                </div>
+                
+
+            </div>
+            <script src="js/physics/weight-conversion.js"></script>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

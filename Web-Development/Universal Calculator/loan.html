@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unitconvert</title>
+  <link rel="stylesheet" href="loan.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<body>
+  <div class="iframe-container">
+    <iframe src='https://my.spline.design/cubes-69297beb0121738ffb1b9e140e7c61fd/' frameborder='0' width='100%' height='100%'></iframe>  </div>
+  <div class="header">
+    <img src="image-removebg-preview (9).png" alt="" style="width: 300px; height: auto;">
+<nav>
+  <a href="calc.html">Scientific Calculator</a>
+  <a href="html/digital/digital-storage.html">Universal Unit Converter</a>
+  <a href="BMI.html">BMI Calculator</a>
+  <a href="currency_convertor.html">Currency convertor</a>
+  <a href="index.html">Home</a>
+</nav>
+</div>
+<div class="col-md-12 paymentCalc">
+
+  <div class="col-md-6">
+
+    <form id="loanCalc" action="" method="get" class="">
+      <div class="col-md-12">
+        <h2>Calculate Your Loan Payment</h2>
+        <div class="form-group">
+          <label for="vehiclePrice">Amount</label>
+          <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="vehiclePrice" placeholder="Loan Amount">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="downPayment">Down Payment</label>
+          <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="downPayment" placeholder="Down Payment" value="0">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="tradeValue">Trade In Value</label>
+          <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="tradeValue" placeholder="Trade In Value" value="0">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="intRate">Interest Rate</label>
+          <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="intRate" placeholder="Interest Rate" value="3.25">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="loanTerm">Loan Term</label>
+          <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="loanTerm" placeholder="Loan Term (ex: 36 Months)">
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-md-12">
+        <a href="#" class="calcBtn" onclick="calculatePayments()" id="calculate" value="Calulate">Calculate</a>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div id="paymentResults">
+
+    </div>
+  </div>
+</div>
+<script src="loan.js"></script>
+</body>
+</html>
+
+

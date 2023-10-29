@@ -1,0 +1,75 @@
+
+
+#loanCalc input{
+  padding:10px;
+  display:block;
+}
+
+.clearfix{
+  clear:both!important;
+}
+
+.paymentCalc{
+  margin-left: 590px;
+  margin-top: 55px;
+  width: 250px;
+  background-color: #f7f7f7;
+  border: 1px solid #d3d3d3;
+  padding: 35px 35px;
+  overflow: auto;
+border-radius: 38px;
+}
+
+.calcBtn{
+  display:inline-block;
+  background:#232323;
+  color:#fff;
+  text-align:center;
+  padding:10px 20px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+#paymentResults{
+  display: none;
+  background:#fff;
+  padding: 30px 60px 36px 60px;
+  border:1px solid lightgrey;
+  margin-top:88px;
+}
+.header {
+  padding: 20px 0;
+}
+
+.header h1 {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav {
+  text-align: right;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+}
+
+.header nav a:hover {
+  background-color: #ccc;
+}
+.iframe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
