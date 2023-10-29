@@ -1,0 +1,15 @@
+# Ignore output directories
+/dist/
+/out/
+/build/
+
+# Ignore Node.js dependencies
+/node_modules/
+
+# Ignore build and temporary files
+*.js
+*.js.map
+*.d.ts
+
+# Ignore package-lock files
+package-lock.json
