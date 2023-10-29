@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+Body{
+    background-color: darkcyan;
+}
+.container{
+    display: flex;
+    width: 70vw;
+    height: 60vh;
+    position: relative;
+    top: 19.5vh;
+    left: 14.5vw;
+    border: 5px solid black;
+    background-color: antiquewhite;
+}
+.container h1{
+    font-size: 5vw;
+    opacity: 0.9;
+    padding-left: 19vw;
+}
+.container h3{
+    font-size: 2.5vw;
+    opacity: 0.9;
+    padding-left: 24vw;
+    padding-top: 5vh ;
+}
+#longurl{
+    width: 40vw;
+    height: 4vh;
+    position: relative;
+    left: 15vw;
+    top: 6vh;
+}
+#shorturl{
+    width: 40vw;
+    height: 4vh;
+    position: relative;
+    left: 15vw;
+    top: 13vh;
+}
+#short{
+    width: 40vw;
+    height: 4vh;
+    position: relative;
+    left: 15vw;
+    top: 9vh;
+    font-size: 1.2vw;
+    transition: 0.3s ease-out 100ms;
+}
+#copy{
+    font-size: 1.5vw;
+    position: relative;
+    top: 9vh;
+    left: 53.1vw;
+    background:none;
+    border: none;
+}
+#short:hover{
+    transform: scale(1.05);
+    border-radius: 10px;
+}
