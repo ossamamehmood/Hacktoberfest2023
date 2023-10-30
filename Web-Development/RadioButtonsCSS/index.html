@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Butoons</title>
+    <style>
+        .custom-radio {
+            position: relative;
+            width: 5px;
+            height: 5px;
+            appearance: none;
+            padding-left: 20px;
+            }
+            .custom-radio:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            display: block;
+            background: black;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            }
+            .custom-radio:after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            display: block;
+            background: gray;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            }
+            .custom-radio:checked:after {
+            background-color: red;
+            }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="radio"  name="custom-radio" class="custom-radio"> radio button 1<br><br>
+        <input type="radio" name="custom-radio" class="custom-radio"> radio button 2
+    </form>
+</body>
+</html>
