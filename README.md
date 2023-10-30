@@ -24,7 +24,7 @@ Do read the [Contribution Guidelines](/CONTRIBUTING.md)
 
 Please read our [Code of Conduct](codeofconduct.md) before participating in this project.
 
-### FAQs
+### FAQs :thinking::bulb:
 
 If you have any questions, please check our [FAQs](Faqs.md) for answers.
 
