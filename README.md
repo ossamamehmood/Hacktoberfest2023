@@ -150,7 +150,7 @@ If you have any questions, please check our [FAQs](Faqs.md) for answers.
 </tr>
 </table>
 
-## Contributors of `Hacktoberfest 2023`
+## Contributors :computer: of `Hacktoberfest 2023` 🧡
 
 <div align="center">
 <a href="https://github.com/ossamamehmood/Hacktoberfest2023/graphs/contributors">
