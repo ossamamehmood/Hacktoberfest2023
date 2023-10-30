@@ -41,7 +41,7 @@ If you have any questions, please check our [FAQs](Faqs.md) for answers.
 
 </div>
 
-## Our `Maintainers`
+## Our `Maintainers` :muscle::sunglasses:
 
 <table>
 <tr>
