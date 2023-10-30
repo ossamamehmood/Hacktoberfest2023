@@ -1,0 +1,49 @@
+import java.util.*;
+class Circular_Prime
+{
+    void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter number");
+        int n=sc.nextInt();
+        circular(n);
+    }
+    int prime(int n)
+    {
+        int c=0,x=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+                c++;
+        }
+        if(c==2)
+            x=1;
+        return x;
+    }
+    void circular(int n)
+    {
+        int cp=n,a=0,ch=0,s=0,m=0,b=0;
+        while(cp>0)
+        {
+            cp=cp/10;
+            ch++;
+        }
+        for(int j=1;j<=ch;j++)
+        {
+            a=prime(n);
+            if(a==1)
+                System.out.println(n);   
+            else
+            {
+                System.out.println(n+" Is not circular prime number");
+                break;
+            }
+            s=n%(int)(Math.pow(10,(ch-1)));
+            b=n/(int)(Math.pow(10,(ch-1)));
+            m=(s*10)+b;
+            n=m;
+        }
+        if(a==1)
+            System.out.println(n+" Is circular prime number");
+    }
+}   
