@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converting .xlsx to json</title>
+    <style>
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .table_container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+  </head>
+  <body>
+    <div class="top">
+      <span>Upload .xlsx files only</span
+      ><input type="file" id="file_uploader" />
+    </div>
+    <div class="table_container">
+      <table>
+        <th>
+          <tr id="th_tr"></tr>
+        </th>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
