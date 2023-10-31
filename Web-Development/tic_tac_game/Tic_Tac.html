@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    #board {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 330px;
+      margin: 0 auto;
+    }
+    
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      background-color: #fff;
+    }
+    
+    .cell:hover {
+      background-color: #f9f9f9;
+    }
+    
+    #score {
+      max-width: 200px;
+      margin: 20px auto;
+      text-align: center;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    #score h2 {
+      margin-top: 0;
+    }
+    
+    #score .player-score {
+      margin-bottom: 10px;
+    }
+    
+    #score .player-score:last-child {
+      margin-bottom: 0;
+    }
+    
+    .message {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    
+    #newGame {
+      display: block;
+      max-width: 150px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #2196f3;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    #newGame:hover {
+      background-color: #0e87e8;
+    }
+    #resetGame {
+      display: block;
+      max-width: 150px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #2196f3;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    #resetGame:hover {
+      background-color: #0e87e8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="score">
+    <h2>Score</h2>
+    <div class="player-score" id="playerA">Player A: <span id="scoreA">0</span></div>
+    <div class="player-score" id="playerB">Player B: <span id="scoreB">0</span></div>
+  </div>
+  <div class="message"></div>
+  <button id="newGame">New </button>
+  <button id="resetGame">Reset </button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var currentPlayer = 'X';
+      var moves = 0;
+      var gameOver = false;
+
+      // Retrieve scores from localStorage
+      var scoreA = localStorage.getItem('scoreA') || 0;
+      var scoreB = localStorage.getItem('scoreB') || 0;
+      $('#scoreA').text(scoreA);
+      $('#scoreB').text(scoreB);
+
+      // Handle cell click event
+      $('.cell').on('click', function() {
+        if (!gameOver && $(this).text() === '') {
+          $(this).text(currentPlayer);
+          moves++;
+
+          if (checkWin(currentPlayer)) {
+            $('.message').text('Player ' + currentPlayer + ' wins!');
+            updateScore(currentPlayer);
+            gameOver = true;
+          } else if (moves === 9) {
+            $('.message').text('It\'s a draw!');
+            gameOver = true;
+          } else {
+            currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+          }
+        }
+      });
+
+      // Check if a player has won
+      function checkWin(player) {
+        var cells = $('.cell');
+        var winningCombos = [
+          [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+          [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+          [0, 4, 8], [2, 4, 6] // Diagonals
+        ];
+
+        for (var i = 0; i < winningCombos.length; i++) {
+          var combo = winningCombos[i];
+          if (cells.eq(combo[0]).text() === player &&
+              cells.eq(combo[1]).text() === player &&
+              cells.eq(combo[2]).text() === player) {
+            return true;
+          }
+        }
+
+        return false;
+      }
+
+      // Update score and store in localStorage
+      function updateScore(player) {
+        if (player === 'X') {
+          scoreA++;
+          localStorage.setItem('scoreA', scoreA);
+          $('#scoreA').text(scoreA);
+        } else if (player === 'O') {
+          scoreB++;
+          localStorage.setItem('scoreB', scoreB);
+          $('#scoreB').text(scoreB);
+        }
+      }
+
+      // Reset the game and clear the board
+      function resetGame() {
+        $('.cell').text('');
+        moves = 0;
+        currentPlayer = 'X';
+        gameOver = false;
+        $('.message').empty();
+      }
+
+      // Reset the game and clear the board
+      function resetGameNew() {
+        $('.cell').text('');
+        moves = 0;
+        currentPlayer = 'X';
+        gameOver = false;
+        $('.message').empty();
+        var scoreA = localStorage.removeItem('scoreA');
+        var scoreB = localStorage.removeItem('scoreB');
+        $('#scoreA').text(0);
+        $('#scoreB').text(0);
+      }
+
+      // New game button click event
+      $('#newGame').on('click', function() {
+        resetGame();
+      });
+      $('#resetGame').on('click', function() {
+        resetGameNew();
+      });
+    });
+  </script>
+</body>
+</html>
