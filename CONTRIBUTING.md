@@ -25,6 +25,7 @@ We have organized the project into different folders for various programming lan
 - [Python](Python/)
 - [C](C/)
 - [C++](C++/)
+- [Golang](Golang/)
 - [Java](Java/)
 - [JavaScript](JavaScript/)
 - [Web Development](Web-Development/)
