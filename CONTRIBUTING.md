@@ -4,9 +4,9 @@ Before you start contributing, please read our [Code of Conduct](codeofconduct.m
 
 
 - Create an issue about the code or contributions you want to make.
-- Go through the issues before creating one,to avoid duplicate issues
+- Go through the issues before creating one inorder to avoid duplicate issues
 - Once assigned,make your contributions and create your first PR
-- kindly provide a simple detail about you code or contribution,so others can learn and improve on it
+- kindly provide a simple detail about your code or contribution,so others can learn and improve on it
 - Do NOT remove other content.
 - Styling/code can be pretty, ugly or stupid, big or small as long as it works
 - Try to keep pull requests small to minimize merge conflicts
@@ -39,7 +39,7 @@ If you are new to programming, we recommend starting with the "Web Development" 
 ```terminal
 git clone https://github.com/ossamamehmood/Hacktoberfest2023.git
 ```
-- Navigate to project directory.
+- Navigate to the project directory.
 ```terminal
 cd Hacktoberfest2023
 ```
