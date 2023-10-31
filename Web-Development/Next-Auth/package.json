@@ -1,0 +1,36 @@
+{
+  "name": "auth-nextjs-youtube",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.3.2",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1",
+    "next": "13.4.7",
+    "nodemailer": "^6.9.6",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/nodemailer": "^6.4.13"
+  }
+}
