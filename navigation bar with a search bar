@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Basic CSS for styling the navigation bar */
+        #navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #search-bar {
+            float: right;
+            padding: 14px 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <input type="text" id="search-bar" placeholder="Search">
+    </div>
+
+    <script>
+        // JavaScript to handle search functionality
+        const searchBar = document.getElementById("search-bar");
+
+        searchBar.addEventListener("input", function () {
+            const query = searchBar.value.toLowerCase();
+            const links = document.querySelectorAll("#navbar a");
+
+            links.forEach(link => {
+                const linkText = link.innerText.toLowerCase();
+                if (linkText.includes(query)) {
+                    link.style.display = "block";
+                } else {
+                    link.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
