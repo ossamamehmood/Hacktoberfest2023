@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 5%;
+  z-index: 10;
+}
+.navar_netflix {
+  height: 100%;
+  width: 125px;
+}
+.navbar_nav_items {
+  display: flex;
+  gap: 10px;
+}
+.netflix_logo {
+  width: 100%;
+  height: 100%;
+}
+.language_dropdown {
+  background: transparent;
+  border: none;
+  color: white;
+}
+.dropdown_container {
+  border: 1px solid white;
+  padding: 0.4rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.signin_button {
+  border: #dc030f;
+  background: #dc030f;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  height: 35px;
+  width: 100px;
+}
+.hero_bg_img_cont {
+  width: 100%;
+  height: 100%;
+}
+.hero_bg_img {
+  width: 100%;
+  height: 100%;
+  /* height: 90px; */
+  object-fit: cover;
+}
+.hero_bg_overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  /* height:100%; */
+  height: 950px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hero_card {
+  position: absolute;
+  top: 30%;
+  left: 17%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hero_title {
+  font-weight: 600;
+  font-size: 3rem;
+}
+.hero_subtitle,
+hero_desc {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+.signin_button {
+  border: #dc030f;
+  background-color: #dc030f;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  /* background: rgba(0,0.0,0.4) */
+}
+.Email {
+  width: 300px;
+  height: 56px;
+  color: rgb(242, 240, 240);
+  margin-left: 50px;
+  padding: 0, 0.25, 0.9 rem;
+  border-radius: 3px;
+  border-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.get_started {
+  /* font-size: large;
+    width:170px;
+    height: 60px;
+    background-color: #dc030f;
+    border:1px solid #dc030f;
+    color:white; */
+  width: 202.74px;
+  height: 56px;
+  color: #ffffff;
+  font: 24px sans-serif;
+  background: #dc030f;
+  margin: 17px 0px 0px 8px;
+  padding: 12px 24px;
+  border-radius: 3px;
+}
+.card-1,
+.card-2,
+.card-3 {
+  border-top: 8px rgb(69, 69, 69);
+  padding: 50px;
+}
+.card-1 {
+  position: relative;
+  /* padding-left: 80px; */
+  display: inline-grid;
+  grid-template-columns: 50% 40%;
+  text-align: left;
+  align-items: center;
+  padding: 25px 45px 50px;
+}
+.desc-1 {
+  padding-left: 80px;
+}
+.card-1 video {
+  position: relative;
+
+  /* width: 100%; */
+  height: 54%;
+  /* grid-column: 2/2;
+    grid-row: 1/2; */
+  z-index: 1;
+  margin-top: 0px;
+}
+.card-1 img {
+  position: relative;
+  display: flex;
+  grid-column: 2/2;
+  grid-row: 1/2;
+}
+.style-cards h1 {
+  font-size: 3rem;
+  padding: 1rem;
+  padding-left: 0;
+}
+.style-cards h3 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.border {
+  width: 100%;
+  height: 10px;
+  /* background-color: rgba(236, 233, 233, 0.533); */
+  background-color: #99999969;
+  /* z-index: 1; */
+  margin-top: 80px;
+}
+.card-2 {
+  position: relative;
+  /* padding-left: 80px; */
+  /* display:inline-grid; */
+  /* grid-template-columns: 40% 50%; */
+  text-align: left;
+  align-items: center;
+  padding: 25px 45px 50px;
+  display: flex;
+}
+/* .desc-2{
+    padding-left: 100%;
+} */
+.card-3 {
+  position: relative;
+  /* padding-left: 80px; */
+  display: inline-grid;
+  grid-template-columns: 50% 40%;
+  text-align: left;
+  align-items: center;
+  padding: 25px 45px 50px;
+  margin-bottom: 100px;
+}
+.desc-3 {
+  /* padding: 1000px; */
+  margin-top: -280px;
+  padding-left: 80px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+.card-3 {
+  /* background-image: url(tv2.png); */
+  height: 500px;
+  width: 100%;
+  margin-top: 100px;
+  margin-left: 700px;
+  /* grid-column: 2/2;
+    grid-row: 1/2; */
+}
+/* .card-3 video{
+    position: relative;
+    top:-87px;
+    left:125px;
+    width:65%;
+    height:78%;
+    grid-column: 2/2;
+    grid-row: 1/2;
+    z-index: -1;
+} */
+.footer,
+.footer a {
+  color: #999;
+  font-size: 0.9rem;
+}
+.footer p {
+  margin-bottom: 1.5rem;
+  padding-left: 50px;
+}
+.footer .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding-left: 50px;
+}
+.footer li {
+  line-height: 1.9;
+}
+.img2 {
+  margin-left: 10px;
+}
+.first {
+  width: 10px;
+  margin-left: 200px;
+}
+.img1 {
+  z-index: -1;
+  /* background-image:  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" data-uia="nmhp-card-animation-asset-image" class="default-ltr-cache-1d3w5wq" alt=""> */
+}
+.vid1 {
+  /* z-index: -1; */
+  margin-top: -385px;
+  margin-left: 74px;
+  /* top:-700px; */
+  /* right: 10px;
+    left: 500px; */
+}
+.desc-3 h3 {
+  margin-bottom: 600px;
+}
+.three {
+  margin-bottom: 300px;
+}
