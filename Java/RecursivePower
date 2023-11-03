@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class RecursivePower {
+	
+	public static void main(String args[]) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter a positive base number");
+		double base = in.nextDouble();
+		System.out.println("Please enter a positive exponent number");
+		int exp = in.nextInt();
+		System.out.println("Result is " + recursiveStep(base, exp));
+		
+		
+		
+		
+	}
+	public static double recursiveStep(double base, int exp) {
+		//base case
+		if (exp == 0) {
+			return 1;
+		}
+		//power function is just base multiplied by itself, the function keeps getting called and the exponent reduces by one until base case is reached 
+			return base * recursiveStep(base, exp -1);
+		}
+	}
+
+
