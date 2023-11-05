@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./components/navbar.css" />
+    <link rel="stylesheet" href="./components/footer.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        background-color: rgb(238, 238, 238);
+        font-family: Arial;
+      }
+      section {
+        background-color: #fff;
+      }
+      #hotel-list-container {
+        width: 1000px;
+        margin: auto;
+      }
+      .hotel-card {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        border-radius: 10px;
+        height: 195px;
+        margin-bottom: 9px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .left-div {
+        width: 65%;
+        display: flex;
+        gap: 10px;
+      }
+      .right-div {
+        width: 35%;
+        padding: 7px;
+        padding-bottom: 0px;
+      }
+      .left-div img {
+        width: 35%;
+        border-radius: 8px 0 0 8px;
+      }
+      .info-div > p {
+        color: grey;
+        font-size: 14px;
+      }
+      .view-div {
+        padding: 1px 10px;
+        border-radius: 8px;
+        background-color: rgba(228, 252, 212, 0.678);
+      }
+      .view-div > div + div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #view-deal-btn {
+        height: 37px;
+        background-color: rgb(35, 141, 30);
+        border: none;
+        width: 130px;
+        font-weight: 600;
+        border-radius: 6px;
+        color: azure;
+      }
+      .view-div > div > p {
+        font-size: smaller;
+        margin-bottom: -10px;
+        font-weight: 700;
+      }
+      .view-div > div > p + p {
+        margin-bottom: 10px;
+        color: green;
+      }
+      .view-div h3 {
+        color: rgb(15, 104, 15);
+      }
+      .view-div:hover {
+        border: 1px solid greenyellow;
+      }
+      .price-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+      .price-div > div {
+        width: 38%;
+        height: 65px;
+        border-radius: 6px;
+        padding-left: 8px;
+        background-color: whitesmoke;
+      }
+      .price-div > div + div {
+        width: 55%;
+        background-color: whitesmoke;
+      }
+      .price-div > div > p {
+        margin-top: 10px;
+        margin-bottom: -1px;
+      }
+      #extra-div {
+        height: 160px;
+        text-align: center;
+        margin-bottom: 70px;
+      }
+      .div1 {
+        margin-bottom: 5px;
+      }
+      #show-more {
+        height: 37px;
+        border-radius: 6px;
+        color: azure;
+        margin-top: 50px;
+        width: 100px;
+        background-color: rgb(104, 103, 103);
+        margin: 30px auto;
+      }
+      #show-more:hover {
+        cursor: pointer;
+        background-color: black;
+      }
+      #view-deal-btn:hover {
+        background-color: rgb(0, 94, 0);
+        cursor: pointer;
+      }
+      #extra-div > div {
+        padding: 4px;
+        border-radius: 10px;
+        border-bottom: 5px solid grey;
+        background-color: #fff;
+      }
+      .fa {
+        color: rgb(255, 185, 56);
+        font-size: larger;
+      }
+      .fa + p {
+        color: grey;
+        font-size: smaller;
+      }
+      .fa:hover {
+        cursor: pointer;
+        color: rgb(255, 123, 0);
+      }
+      #section {
+        width: 1000px;
+        margin: auto;
+        padding-top: 15px;
+        color: rgb(74, 74, 74);
+      }
+      #section > ul > li {
+        margin-left: -20px;
+        font-size: 14px;
+        line-height: 22px;
+      }
+      #main-section {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #refer-hotel > img {
+        margin-right: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #refer-hotel > img:hover {
+        box-shadow: rgba(35, 73, 185, 0.525) 0px 3px 8px;
+        border: 1px solid blue;
+        cursor: pointer;
+      }
+      #more-dest {
+        display: flex;
+        justify-content: space-between;
+        color: rgb(52, 162, 205);
+      }
+      #more-dest > div {
+        margin-top: -20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="hotel-list-container">
+      <div id="container"></div>
+      <div id="extra-div">
+        <button id="show-more">Show more</button>
+        <div>
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+          <p>
+            The prices and availability we receive from booking sites change
+            constantly. This means you may not always find the exact same offer
+            you saw on Travel Seeker when you land on the booking site.
+          </p>
+        </div>
+      </div>
+    </div>
+    <section id="main-section">
+      <div id="section">
+        <div>
+          <h2>Hotels in Jaipur</h2>
+          <p>
+            Find Incredible Cheap Hotels in Jaipur, India. Search and Compare
+            the Prices of Accommodation Deals to Find Very Low Rates with Travel
+            Seeker
+          </p>
+          <ul>
+            <li>Comprehensive hotel search for Jaipur online</li>
+            <li>Find a cheap hotel in Jaipur!</li>
+            <li>Book at the ideal price!</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Among Top Rated Hotels in Jaipur</h2>
+          <div id="refer-hotel">
+            <img
+              src="./Images/image1.png"
+              style="height: 300px; width: 240px"
+              alt=""
+            />
+            <img
+              src="./Images/image1.png"
+              style="height: 300px; width: 240px"
+              alt=""
+            />
+            <img
+              src="./Images/image1.png"
+              style="height: 300px; width: 240px"
+              alt=""
+            />
+            <img
+              src="./Images/image1.png"
+              style="height: 300px; width: 240px"
+              alt=""
+            />
+          </div>
+        </div>
+        <div style="margin-top: 40px">
+          <h2>Make magical memories in the melting pot mayhem of Mumbai</h2>
+          <p style="font-size: 14px">
+            Make no mistake; Mumbai is enormous. Sustaining more than 20 million
+            industrious residents, this commercial powerhouse city constructed
+            on reclaimed land on India’s west coast crackles with such energy
+            that rush hour occasionally becomes indistinguishable from other
+            times of day. Previously known as Bombay, eclectic Mumbai boasts
+            fantastic architecture, amazing food, great shopping and World
+            Heritage Sites. Moreover, it is home to India’s prolific Bollywood
+            film industry. Amidst the organized chaos and contrasting economic
+            fortunes on display in sweltering Mumbai, there are numerous hotels,
+            including several near the international airport
+          </p>
+        </div>
+        <div style="margin-top: 30px">
+          <h2>Eat like a local</h2>
+          <p style="font-size: 14px">
+            Cosmopolitan Mumbai is renowned for its mouth-watering food. Curry
+            is well-liked by Mumbaikar locals, but many lip-smacking surprises
+            remain in store for foodies who reckon they already know their
+            Indian cuisine. Near your hotel you can usually taste some of
+            Mumbai’s best food at the ubiquitous street stalls. These
+            reassuringly popular eateries loved by locals from all walks of life
+            are where social, religious and economic divisions in Mumbai melt
+            away. Indeed, the sight of labourers snacking beside millionaires is
+            not uncommon.
+          </p>
+
+          <p>
+            The stalls assault the senses, selling refreshing mango lassi
+            yoghurt-based drinks and hot tea plus kulfi ice cream and kebabs
+            featuring meat or freshly-caught fish. Vegetarian Mumbai street
+            snacks include vada pav potato burgers, deep-fried panipuri breads
+            with delicate flavourings and dosa pancakes with chutney.
+          </p>
+          <p style="font-size: 14px">
+            Although most of Mumbai’s beaches are unsuitable for bathing, their
+            fresh air makes them fashionable haunts for evening strolls and
+            admiring sunsets over the Arabian Sea. The curved seafront promenade
+            of Marine Drive plus the Chowpatty and Juhu beaches are routinely
+            abuzz with food vendors celebrated for their bhel puri, comprising
+            puffed rice, vegetables and tamarind sauce. Mumbai’s street eateries
+            also exist in clusters or khau gallis, meaning “food streets” in the
+            local Marathi language. Examples include Carter Road off Bandra
+            promenade, Ghatkopar, Mahim and Nariman Point. Additionally, Mumbai
+            possesses some of India’s finest high-end eateries located near the
+            international airport or in posh hotels and commercial districts.
+          </p>
+        </div>
+        <div style="margin-top: 30px">
+          <h2>Price Range</h2>
+          <p style="font-size: 14px">
+            Hotels in Mumbai - price range from ₹470 to ₹38,940 (price per
+            night)
+          </p>
+        </div>
+        <h2 style="margin: 30px 0pc 30px 0px">Point of Visit in Mumbai</h2>
+        <div id="more-dest">
+          <div>
+            <ul>
+              <l1>Wankhede Stadium</l1
+              ><br />
+              <l1>Wankhede Stadium</l1
+              ><br />
+              <l1>Wankhede Stadium</l1
+              ><br />
+              <l1>Wankhede Stadium</l1>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <l1>Juhu Aerodrome</l1
+              ><br />
+              <l1>Juhu Aerodrome</l1
+              ><br />
+              <l1>Juhu Aerodrome</l1
+              ><br />
+              <l1>Juhu Aerodrome</l1>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <l1>Gateway of India</l1
+              ><br />
+              <l1>Gateway of India</l1
+              ><br />
+              <l1>Gateway of India</l1
+              ><br />
+              <l1>Gateway of India</l1>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <l1>Juhu Aerodrome</l1
+              ><br />
+              <l1>Juhu Aerodrome</l1
+              ><br />
+              <l1>Juhu Aerodrome</l1
+              ><br />
+              <l1>Juhu Aerodrome</l1>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <l1>Gateway of India</l1
+              ><br />
+              <l1>Gateway of India</l1
+              ><br />
+              <l1>Gateway of India</l1
+              ><br />
+              <l1>Gateway of India</l1>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="foot"></div>
+  </body>
+</html>
+<script src="./hotelList.js" type="module"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+  crossorigin="anonymous"
+></script>
+<script>
+  let hotelArray = [
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/99/53/99537_v5.jpeg",
+      name: "The Oberoi RajVilas Jaipur",
+      rating: "5 Star Hotel",
+      price: 5999,
+      cityDistance: "4.4 km to City Centre",
+      reviews: "9.5 - Excellent (702 reviews)",
+      address: "B-12 Ring Road, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/32/26/3226448.jpeg",
+      name: "Treebas Leeds Jaipur",
+      rating: "4 Star Hotel",
+      price: 3589,
+      cityDistance: "3.8 km to City Centre",
+      reviews: "8.7 - Great (702 reviews)",
+      address: "Station Road, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/22/27/2227554_v1.jpeg",
+      name: "Lalit Jaipur",
+      rating: "4 Star Hotel",
+      price: 2999,
+      cityDistance: "1.3 km to City Centre",
+      reviews: "9.2 - Excellent (702 reviews)",
+      address: "PaancheWala Complex, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/88/18/881823_v1.jpeg",
+      name: "Hyatt Hotel Jaipur",
+      rating: "5 Star Hotel",
+      price: 4450,
+      cityDistance: "5 km to City Centre",
+      reviews: "8.8 - Good (702 reviews)",
+      address: "B-87 Vaishali Nagar, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/21/03/2103210_v4.jpeg",
+      name: "Fairmont Jaipur",
+      rating: "5 Star Hotel",
+      price: 2299,
+      cityDistance: "2 km to City Centre",
+      reviews: "9.1 - Excellent (702 reviews)",
+      address: "B-12 Ring Road, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/32/26/3226448.jpeg",
+      name: "Treebas Leeds Jaipur",
+      rating: "4 Star Hotel",
+      price: 4550,
+      cityDistance: "1.4 km to City Centre",
+      reviews: "8.1 - Great (702 reviews)",
+      address: "Station Road, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/22/27/2227554_v1.jpeg",
+      name: "Lalit Jaipur",
+      rating: "3 Star Hotel",
+      price: 1500,
+      cityDistance: "2.4 km to City Centre",
+      reviews: "7.6 - Good (702 reviews)",
+      address: "PaancheWala Complex, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/17/72/1772095_v7.jpeg",
+      name: "Kalyan Hotel Jaipur",
+      rating: "5 Star Hotel",
+      price: 1999,
+      cityDistance: "2.4 km to City Centre",
+      reviews: "7.1 - Good (702 reviews)",
+      address: "B-87 Vaishali Nagar, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/32/26/3226448.jpeg",
+      name: "Kosmos Hotel Jaipur",
+      rating: "3 Star Hotel",
+      price: 2100,
+      cityDistance: "2.4 km to City Centre",
+      reviews: "9.2 - Excellent (702 reviews)",
+      address: "Chomu Pulia, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/99/53/99537_v5.jpeg",
+      name: "Stuart Hotel Jaipur",
+      rating: "4 Star Hotel",
+      price: 3000,
+      cityDistance: "2.4 km to City Centre",
+      reviews: "5.1 - Average (702 reviews)",
+      address: "Somaliya Tower Chandpol, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/85/69/8569024_v3.jpeg",
+      name: "Rastoki Jaipur",
+      rating: "3 Star Hotel",
+      price: 2099,
+      cityDistance: "2.4 km to City Centre",
+      reviews: "6.7 - Good (702 reviews)",
+      address: "C-9 Mansarovar, Jaipur, Rajasthan",
+    },
+    {
+      image:
+        "https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/22/15/2215962_v3.jpeg",
+      name: "Hathori Palace",
+      price: 3499,
+      rating: "5 Star Hotel",
+      cityDistance: "2.4 km to City Centre",
+      reviews: "9.0 - Excellent (702 reviews)",
+      address: "Sharda Street WTP Road, Jaipur, Rajasthan",
+    },
+  ];
+  let html = "";
+  let mainContainer = document.getElementById("container");
+  display();
+
+  function display() {
+    hotelArray.map((hotel, idx) => {
+      if (idx < 3) {
+        html += `<div class="hotel-card">
+                            <div class="left-div">
+                                <img src="${hotel.image}" alt="Hotel">
+                                <div class="info-div">
+                                    <h3>${hotel.name}</h3>
+                                    <p>${hotel.rating}</p>
+                                    <p>${hotel.cityDistance}</p>
+                                    <h4>${hotel.reviews}</h4>
+                                </div>
+                            </div>
+                            <div class="right-div">
+                                <div class="view-div">
+                                    <div>
+                                        <p class="hotel-name" style='margin-bottom:5px'>${
+                                          hotel.name
+                                        }</p>
+                                        <p>Free Cancellation ~ Breakfast included</p>
+                                    </div>
+                                    <div class='div1'>
+                                        <h3>Rs. ${hotel.price + 150}</h3>
+                                        <button id='view-deal-btn' onclick='viewdeal(${idx})'>View Deal</button>
+                                    </div>
+                                </div>
+                                <div class="price-div">
+                                    <div>
+                                        <p>Agoda</p>
+                                        <h4>Rs. ${hotel.price + 820}</h4>
+                                    </div>
+                                    <div>
+                                        <p>Our lowest price:</p>
+                                        <h4>Rs. ${hotel.price}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+      }
+    });
+    mainContainer.innerHTML =
+      `<h3>Hotels in <span>Jaipur (Rajasthan, India)</span></h3>` + html;
+  }
+
+  let showMoreBtn = document.getElementById("show-more");
+  showMoreBtn.addEventListener("click", showMoreHotels);
+
+  function showMoreHotels() {
+    html = "";
+    hotelArray.map((hotel, idx) => {
+      html += `<div class="hotel-card">
+                        <div class="left-div">
+                            <img src="${hotel.image}" alt="Hotel">
+                            <div class="info-div">
+                                <h3>${hotel.name}</h3>
+                                <p>${hotel.rating}</p>
+                                <p>${hotel.cityDistance}</p>
+                                <h4>${hotel.reviews}</h4>
+                            </div>
+                        </div>
+                        <div class="right-div">
+                            <div class="view-div">
+                                <div>
+                                    <p class="hotel-name" style='margin-bottom:5px'>${
+                                      hotel.name
+                                    }</p>
+                                    <p>Free Cancellation ~ Breakfast included</p>
+                                </div>
+                                <div>
+                                    <h3>Rs. ${hotel.price + 150}</h3>
+                                    <button id='view-deal-btn' onclick='viewdeal(${idx})');">View Deal</button>
+                                </div>
+                            </div>
+                            <div class="price-div">
+                                <div>
+                                    <p>Agoda</p>
+                                    <h4>Rs. ${hotel.price + 820}</h4>
+                                </div>
+                                <div>
+                                    <p>Our lowest price:</p>
+                                    <h4>Rs. ${hotel.price}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+    });
+
+    mainContainer.innerHTML =
+      `<h3>Hotels in <span>Jaipur (Rajasthan, India)</span></h3>` + html;
+  }
+
+  let viewDealBtn = document.getElementById("view-deal-btn");
+  function viewdeal(htl) {
+    console.log(hotelArray[htl]);
+    localStorage.setItem("selectedHotel", JSON.stringify(hotelArray[htl]));
+    window.location.href = "hotelDetails.html";
+  }
+</script>

@@ -1,0 +1,200 @@
+body {
+    margin: 0px;
+    padding: 0px;
+  }
+  nav {
+    display: flex;
+    padding: 13px 0px 13px 0px;
+    width: 100%;
+    border: 1px solid #c4d3db;
+    justify-content: flex-end;
+  }
+  #nav-left-option {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .nav-Favorites-icon a {
+    display: flex;
+    gap: 10px;
+  }
+  .nav-Favorites-icon a svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  #dropdown-menu-id{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  #nav-left-option a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+  
+  .nav-Img-logo img {
+    width: 100px;
+    height: 32px;
+    vertical-align: middle;
+  }
+  
+  #nav-menuBTN {
+    border: none;
+    background-color: white;
+    color: black;
+  }
+  .nav-INR select {
+    background-color: white;
+    border: none;
+    width: 100px;
+    margin-right: 15px;
+  }
+  .form-select option {
+    background-color: white;
+  }
+  #nav-Deals-from {
+    width: 75%;
+    margin: auto;
+    gap: 35px;
+    display: flex;
+    align-items: center;
+    padding: 50px 0px 30px 0px;
+  }
+  #nav-Deals-from img {
+    height: 56px;
+    width: 180px;
+  }
+  
+  #nav-Deals-from b {
+    font-size: 22px;
+  }
+  #nav-Deals-from p {
+    font-size: 15px;
+    margin: 12px 0px 0px;
+  }
+  #deals-1 {
+    color: #007cc2;
+  }
+  
+  #nav-btn-house-Apartment {
+    width: 75%;
+    margin: auto;
+  }
+  #nav-btn-house-Apartment button {
+    border: none;
+    padding: 9px 16px 11px;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: rgb(231, 244, 250);
+    border-radius: 8px 8px 0px 0px;
+    padding: 5px 15px;
+    margin-right: 4px;
+  }
+  #nav-btn-house-Apartment button:focus {
+    color: #007cc2;
+    background-color: white;
+    border-bottom: 2px solid white;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  #nav-input-main {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 0px 10px 10px 10px;
+    width: 75%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    font-size: 14px;
+  }
+  
+  #nav-input-main-1 {
+    border-right: 1px solid #c4d3db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+  }
+  
+  #nav-input-main-1 input {
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  #searchLogo {
+    width: 20px;
+    height: 20px;
+  }
+  #nav-input-main-1 button {
+    background-color: white;
+    border: none;
+  }
+  
+  .nav-input-main-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    margin: auto;
+    gap: 15px;
+    border-right: 1px solid #c4d3db;
+  }
+  .nav-input-main-2 input {
+    border: none;
+    outline: none;
+    font-weight: 500;
+  }
+  #nav-We-compare {
+    width: 75%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  #nav-We-compare b {
+    font-size: 15px;
+  }
+  
+  #nav-trip-oyo-booking {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px 0px 0px;
+    font-size: 12px;
+    background-color: #f9f9fa;
+    margin: auto;
+  }
+  
+  #nav-trip-oyo-booking img {
+    height: 22px;
+  }
+  
+  #searchButton5 {
+    padding: 0px 12px;
+    width: 156px;
+    height: 44px;
+    font-weight: bold;
+    background-color: #007cc2;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+  }
+  #searchButton5:hover {
+    background-color: #0969a0;
+  }
+  #nav-input-logo svg {
+    width: 25px;
+    height: 25px;
+  }
+  #nav-bar-3 {
+    background-color: #f9fafa;
+    padding: 60px 0px 25px 0px;
+  }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body{
+            font-family: 'Oswald', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+        #container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+            margin-top: 70px;
+        }
+        #logo{
+            width: 16%;
+            margin-top: -40px;
+            margin-left: -220px;
+            margin-bottom: 30px;
+        }
+       
+        #login{
+            display: flex;
+            justify-content: space-around;
+            /* align-items: center; */
+            flex-direction: column;
+            width: 45%;
+        }
+        h1{
+           
+            font-size: 29.5px;
+        }
+        label{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: bolder;
+            margin: 2px;
+        }
+        input{
+            padding: 15px 15px;
+            border-radius: 10px;
+            margin: 10px 2px;
+            width: 88%;
+           border: 1px solid rgb(163, 155, 155);
+        }
+        
+        button{
+            padding: 15px ;
+            border-radius: 10px;
+            margin: 5px 2px;
+            width: 97.5%;
+            background-color:rgb(62, 123, 203) ;
+            border: none;
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+            font-size: 16px;
+        }
+        button:hover{
+            background-color: #2d6995;
+        }
+        
+        
+        p{  
+            padding: 0px 10px;
+            font-size: 15px;
+           
+           
+        }
+        a{
+            color: #56a7e1;
+           
+        }
+        b{
+            margin-top: 20px;
+            margin-left: -120px;
+        }
+        #id{
+         position: relative;
+         right: 8%;
+
+        }
+       
+    </style>
+</head>
+<body>
+      <div id="container">
+         
+            <img  id="logo" src="https://lh3.googleusercontent.com/p/AF1QipMA1spBSQdAHAfrhUfcZajJflHbGi_Xq_n936vz=w1080-h608-p-no-v0" alt="">
+          
+          <p id="id"></p>
+          <div id="login">
+            <h1>Create a password for your new account</h1>
+            <label for="email">Your email address</label>
+            <input type="email" id="email" >
+            <label for="password">Your password</label>
+            <input type="password" id="password" >
+            <label for="firstName"> Enter Your First Name</label>
+            <input type="text" id="firstName" >
+            <label for="lastName">Enter Your Last Name</label>
+            <input type="text" id="lastName" >
+            <button id="btn" >Create account</button>
+            <p><a href="#">Forgot your password?</a></p>
+          </div>
+         
+      </div>
+      <script>
+
+          let email=JSON.parse(localStorage.getItem("email"));
+          document.getElementById("id").textContent=" < "+email;
+          document.getElementById("email").value=email;
+
+
+        document.getElementById("btn").addEventListener("click", function(){
+
+            let dataArray=JSON.parse(localStorage.getItem("data")) ||[];
+            let password= document.getElementById("password").value;
+            let firstName= document.getElementById("firstName").value;
+            let lastName= document.getElementById("lastName").value;
+
+            let obj={
+
+                    email:email,
+                    password:password,
+                    firstName:firstName,
+                    lastName:lastName
+            }
+            dataArray.push(obj);
+            localStorage.setItem("data",JSON.stringify(dataArray));
+            alert("Sign Up Successful")
+            location.href="index.html"
+                       
+                   
+        })
+      </script>
+</body>
+</html>
