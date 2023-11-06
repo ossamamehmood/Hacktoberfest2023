@@ -7,6 +7,13 @@ To run the game, you must have python 3.7 or higher installed on your computer. 
 ```bash
 pip install pygame
 ```
+On a rootless system, you may get an error about not having sufficient permissions to install. To fix this, just create a Virtual Environment like this: 
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install pygame
+```
+
 Once you have python and pygame installed, you can run the game by running the following command in your terminal:
 ```bash
 python main.py
